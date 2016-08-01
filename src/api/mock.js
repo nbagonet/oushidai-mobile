@@ -3,7 +3,7 @@ import Mock from 'mockjs'
 // 初始化Mock
 export const initMock = function () {
   const _host = window.location.hostname
-  if (_host.indexOf('localhost') !== -1 || _host.indexOf('192.168.') !== -1) {
+  if (_host.indexOf('localhost') !== -1 || _host.indexOf('192.168.') !== -1 || _host.indexOf('github') !== -1) {
     // 配置Mock
     Mock.setup({
       timeout: '200-1000'
