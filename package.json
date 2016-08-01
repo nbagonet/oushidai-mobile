@@ -1,8 +1,8 @@
 {
-  "name": "oushidai-spa",
+  "name": "oushidai-mobile",
   "version": "0.1.0",
   "description": "A Vue.js project",
-  "author": "王硕 <101840192@qq.com>",
+  "author": "王硕 <nbagonet@gmail.com>",
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
