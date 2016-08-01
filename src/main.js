@@ -41,7 +41,10 @@ import { initMock } from './api/mock'
 // import { checkRouterDirection } from './vuex/action'
 
 // 开启Vue debug
-Vue.config.debug = true
+Vue.config.debug = false
+if (!Vue.config.debug) {
+  console.log = function () {}
+}
 Vue.config.devtools = true
 
 // 初始化Mock
