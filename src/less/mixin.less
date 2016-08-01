@@ -1,0 +1,30 @@
+// ==========
+// mixin汇总
+// ==========
+
+// 板块投影
+@import './mixin/shadow.less';
+
+// Tag
+@import './mixin/tag.less';
+
+// 文字颜色
+@import './mixin/text-emphasis.less';
+
+// 各种底部渐变条
+@import './mixin/bottom-bar.less';
+
+
+// 计算font-size
+.font-dpr(@font-size)
+{
+    font-size: @font-size;
+    [data-dpr='2'] &
+    {
+        font-size: @font-size*2;
+    }
+    [data-dpr='3'] &
+    {
+        font-size: @font-size*3;
+    }
+}

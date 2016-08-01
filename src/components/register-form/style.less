@@ -1,0 +1,222 @@
+@import '../../less/conf.less';
+
+.register-form
+{
+    .margin(_,20rem/@r);
+    .padding(90rem/@r,_,_);
+    // 工具栏 begin
+    .register-toolbar
+    {
+        .display(flex);
+        .align-items(center);
+        .margin(_,_,45rem/@r);
+        .user-select(none);
+        // 返回按钮 begin
+        .btn-back
+        {
+            font-size: 32rem/@r;
+
+            color: #464646;
+            background-color: fadeout(@color-white, 4%);
+
+            .margin(_,auto,_,_);
+            .border-radius(50%);
+            .box-shadow(0 1px 3px 0 rgba(0,0,0,.15));
+            .size(60rem/@r);
+            .display(flex);
+            .align-items(center);
+            .justify-content(center);
+            &:active
+            {
+                background-color: fadeout(@color-white, 30%);
+            }
+        }
+        // 返回按钮 end
+        // 登录入口 begin
+        .btn-login
+        {
+            font-size: 28rem/@r;
+
+            height: 60rem/@r;
+
+            color: #464646;
+            background-color: fadeout(@color-white, 4%);
+
+            .border-radius(30rem/@r);
+            .padding(_,25rem/@r);
+            .display(flex);
+            .box-shadow(0 1px 3px 0 rgba(0,0,0,.15));
+            .align-items(center);
+            .justify-content(center);
+            &:active
+            {
+                background-color: fadeout(@color-white, 30%);
+            }
+        }
+        // 登录入口 end
+    }
+    // 工具栏 end
+    // 输入框 begin
+    .form-control
+    {
+        position: relative;
+
+        .margin(_,_,15rem/@r);
+        .placeholder(#c7c6c5);
+        [type='text'],
+        [type='password'],
+        [type='email']
+        {
+            font-size: 28rem/@r;
+
+            display: block;
+
+            border: 0;
+            background-color: @color-white;
+
+            .border-radius(2rem/@r);
+            .size(100%,72rem/@r);
+            .padding(_,30rem/@r);
+            .box-shadow(0 1px 3px 0 rgba(0,0,0,.15));
+        }
+        // 错误提示 begin
+        .error
+        {
+            font-size: 22rem/@r;
+            line-height: 1.4;
+
+            color: @color-white;
+            background-color: @color-yellow;
+
+            .box-shadow(0 1px 3px 0 rgba(0,0,0,.15));
+            .border-radius(2rem/@r);
+            .padding(8rem/@r,30rem/@r);
+            .margin(15rem/@r,_,_);
+            .display(flex);
+            .align-items(flex-start);
+            i
+            {
+                .margin(_,.5em,_,_);
+            }
+        }
+        // 错误提示 end
+    }
+    // 输入框 end
+    // 提交按钮 begin
+    .form-submit
+    {
+        .margin(50rem/@r,_,_);
+        .user-select(none);
+        button
+        {
+            font-size: 32rem/@r;
+
+            height: 72rem/@r;
+
+            text-indent: .75em;
+            letter-spacing: .75em;
+
+            color: #474747;
+            border: 0;
+            background-color: @color-white;
+
+            .transition(all @default-transition-time ease-in-out);
+            .box-shadow(0 1px 3px 0 rgba(0,0,0,.15));
+            .margin(_,auto);
+            .display(flex);
+            .align-items(center);
+            .justify-content(center);
+            .border-radius(4rem/@r);
+            .padding(_,60rem/@r);
+            &[disabled],
+            &:disabled
+            {
+                cursor: not-allowed;
+
+                color: #aaa;
+                background-color: #eee;
+            }
+            &:active
+            {
+                color: @color-white;
+                background-color: darken(@color-link-active,10%);
+            }
+        }
+    }
+    // 提交按钮 end
+    // 服务协议 begin
+    .form-help
+    {
+        font-size: 28rem/@r;
+
+        text-align: center;
+
+        color: @color-white;
+
+        .user-select(none);
+        .margin(45rem/@r,_,_);
+        .display(flex);
+        .align-items(center);
+        .justify-content(center);
+        a
+        {
+            text-decoration: underline;
+
+            color: @color-white;
+            &:active
+            {
+                color: fadeout(@color-white, 20%);
+            }
+        }
+        label
+        {
+            .margin(_,7.5rem/@r);
+        }
+    }
+    // 服务协议 end
+    // checkbox begin
+    [type='checkbox']
+    {
+        z-index: -1;
+
+        opacity: 0;
+
+        .size(0);
+        .absolute(0,_,_,0);
+        & + .checkbox
+        {
+            font-size: 20rem/@r;
+
+            color: @color-white;
+            background-color: #eee;
+
+            .size(40rem/@r);
+            .border-radius(50%);
+            .display(flex);
+            .align-items(center);
+            .justify-content(center);
+            .transition(all @default-transition-time ease-in-out);
+            &:after
+            {
+                font-family: 'font-osd';
+
+                content: '\e612';
+
+                .size(40rem/@r);
+                .display(flex);
+                .align-items(center);
+                .justify-content(center);
+            }
+        }
+        // checked begin
+        &:checked
+        {
+            & + .checkbox
+            {
+                background-color: @color-green;
+            }
+        }
+        // checked end
+    }
+    // checkbox end
+}

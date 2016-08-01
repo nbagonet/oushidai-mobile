@@ -1,0 +1,107 @@
+@import '../../less/conf.less';
+
+.org-center-intro-activity
+{
+    // 简介信息 begin
+    .org-center-intro-activity-intro
+    {
+        font-size: 26rem/@r;
+        line-height: 36/26;
+
+        text-align: justify;
+
+        color: #444;
+        background-color: @color-white;
+
+        .margin(20rem/@r);
+        .box-shadow(0 3rem/@r 3rem/@r rgba(0,0,0,.15));
+        .padding(30rem/@r);
+    }
+    // 简介信息 end
+    // 其他信息 begin
+    .org-center-intro-activity-others
+    {
+        font-size: 26rem/@r;
+        line-height: 48/32;
+
+        color: #444;
+        background-color: @color-white;
+
+        .margin(20rem/@r);
+        .padding(30rem/@r);
+        dl
+        {
+            word-wrap: break-word;
+            word-break: break-all;
+
+            // .display(flex);
+            .align-items(flex-start);
+            a
+            {
+                color: @color-link-hover;
+                &:active
+                {
+                    color: @color-link-active;
+                }
+            }
+            em
+            {
+                font-style: normal;
+            }
+            dt
+            {
+                float: left;
+                white-space: nowrap;
+
+                color: #999;
+                
+                .display(flex);
+                .margin(_,10rem/@r,_,_);
+                i
+                {
+                    // font-size: 36rem/@r;
+                    .margin(_,10rem/@r,_,_);
+                }
+            }
+            dd
+            {
+                margin-left: 160rem/@r;
+                > em
+                {
+                    & + em
+                    {
+                        &:before
+                        {
+                            font-family: 'font-osd';
+                            font-size: .85em;
+
+                            content: '\e615';
+                        }
+                    }
+                }
+                > div
+                {
+                    .display(flex);
+                    .align-items(flex-start);
+                }
+                i
+                {
+                    color: #333d93;
+
+                    .margin(_,10rem/@r,_,_);
+                }
+            }
+        }
+    }
+    // 其他信息 end
+    // 地图 begin
+    .org-center-intro-activity-map
+    {
+        .margin(-20rem/@r,20rem/@r,40rem/@r);
+        iframe
+        {
+            .size(100%,240rem/@r);
+        }
+    }
+    // 地图 end
+}

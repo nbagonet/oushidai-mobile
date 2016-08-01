@@ -1,0 +1,52 @@
+// ==========
+// 图片内阴影
+// ==========
+
+// 加载样式配置文件
+@import './conf.less';
+
+// 说明：
+// .inset-shadow-* 所属的容器必须为fixed/relative/absolute
+// 阴影占用:after伪类
+.inset-shadow-l,
+.inset-shadow-m,
+.inset-shadow-s
+{
+    &:after
+    {
+        z-index: 10;
+
+        content: '';
+        pointer-events: none;
+
+        .absolute(0,0,0,0);
+        .transition(all @default-transition-time ease-in-out);
+    }
+}
+
+// 图片尺寸最小边大于300px使用
+.inset-shadow-l
+{
+    &:after
+    {
+        .box-shadow(inset 0 0 80rem/@r rgba(0,0,0,.2));
+    }
+}
+
+// 图片尺寸最小边120px至299px使用
+.inset-shadow-m
+{
+    &:after
+    {
+        .box-shadow(inset 0 0 50rem/@r rgba(0,0,0,.2));
+    }
+}
+
+// 图片尺寸最小边小于120px使用
+.inset-shadow-s
+{
+    &:after
+    {
+        .box-shadow(inset 0 0 30rem/@r rgba(0,0,0,.2));
+    }
+}

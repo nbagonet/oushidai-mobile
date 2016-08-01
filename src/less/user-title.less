@@ -1,0 +1,53 @@
+// 身份标识
+.user-title
+{
+    position: relative;
+
+    .inline-block();
+    i,
+    span
+    {
+        .absolute(-8.5rem/@r,_,0,0);
+    }
+    i
+    {
+        font-size: 45rem/@r;
+        line-height: 1;
+
+        z-index: 10;
+    }
+    span
+    {
+        line-height: 45rem/@r;
+
+        z-index: 20;
+
+        text-align: center;
+
+        color: @color-white;
+
+        .size(45rem/@r);
+    }
+    span,
+    em
+    {
+        font-size: 18rem/@r;
+    }
+    em
+    {
+        font-style: normal;
+        line-height: 28rem/@r;
+
+        display: block;
+
+        white-space: nowrap;
+
+        color: @darker-grey-blue;
+        background-color: @lightest-grey-blue;
+
+        .border-radius(4rem/@r);
+        .padding(_,10rem/@r,_,5rem/@r+45rem/2/@r);
+        .margin(_,_,_,45rem/2/@r);
+        .translateY(7%);
+    }
+}

@@ -1,0 +1,92 @@
+@import '../../less/conf.less';
+
+.org-center-intro-blk
+{
+    font-size: 24rem/@r;
+    line-height: 40/24;
+
+    position: relative;
+
+    color: @color-grey;
+    background-color: @color-white;
+
+    .bottom-bar-news();
+    .margin(_,_,25rem/@r);
+    .box-shadow(0 3rem/@r 3rem/@r rgba(0,0,0,.15));
+    .padding(40rem/@r,30rem/@r);
+    // 二维码
+    .qr
+    {
+        float: right;
+
+        .margin(_,_,10rem/@r,20rem/@r);
+        .size(160rem/@r);
+        img
+        {
+            display: block;
+
+            border: none;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-size: cover;
+
+            .size(100%);
+        }
+    }
+    // 简介信息
+    .text
+    {
+        text-align: justify;
+        word-wrap: break-word;
+        word-break: break-all;
+
+        .margin(_,_,1em,_);
+        p
+        {
+            .margin(_,_,1em,_);
+        }
+    }
+    // 联系信息
+    .contact
+    {
+        font-size: 22rem/@r;
+
+        color: @color-darker-grey;
+        i,
+        strong,
+        span
+        {
+            vertical-align: middle;
+
+            .inline-block();
+        }
+        strong
+        {
+            font-weight: normal;
+
+            color: @medium-grey-blue;
+
+            .margin(_,.5em,_,_);
+        }
+        i
+        {
+            color: @darker-grey-blue;
+
+            .margin(_,15rem/@r,_,_);
+        }
+        .weixin
+        {
+            i
+            {
+                font-size: 40rem/@r;
+            }
+        }
+        .email
+        {
+            i
+            {
+                font-size: 40rem/@r;
+            }
+        }
+    }
+}

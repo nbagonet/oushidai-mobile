@@ -1,0 +1,81 @@
+@import '../../less/conf.less';
+
+.org-center-navbar{
+  background-color: @color-white;
+
+  .box-shadow(0 0 4rem/@r rgba(0,0,0,.15));
+  ul
+  {
+      // height: 100rem/@r;
+      .display(flex);
+  }
+  li
+  {
+      text-align: center;
+
+      .flex(1);
+      // 选中样式
+      &.active
+      {
+          a
+          {
+              &:after
+              {
+                  bottom: 0;
+              }
+          }
+      }
+  }
+  a
+  {
+      position: relative;
+
+      display: table;
+      overflow: hidden;
+
+      .size(100%,100rem/@r);
+      .inner
+      {
+          position: relative;
+
+          display: table-cell;
+          overflow: hidden;
+
+          text-align: center;
+          vertical-align: middle;
+      }
+      &:after
+      {
+          z-index: 10;
+
+          content: '';
+
+          background-color: @standard-blue;
+
+          .absolute(_,_,-15rem/@r,50%);
+          .translateX(-50%);
+          .size(100rem/@r,10rem/@r);
+          .transition(all @default-transition-time ease-in-out);
+      }
+  }
+  em,
+  span
+  {
+      display: block;
+  }
+  em
+  {
+      font-size: 28rem/@r;
+      font-style: normal;
+      line-height: 1;
+
+      color: @color-darker-grey;
+  }
+  span
+  {
+      font-size: 24rem/@r;
+      line-height: 32/24;
+
+      color: @medium-grey-blue;
+  }
+}

@@ -1,0 +1,186 @@
+@import '../../less/conf.less';
+
+.side-menu
+{
+    // 本体 begin
+    &
+    {
+        pointer-events: none;
+    }
+    // 本体 end
+    // 遮罩 begin
+    .mask
+    {
+        z-index: 2050;
+
+        opacity: 0;
+        // background-color: rgba(0,0,0,.35);
+
+        .fixed(0,0,0,0);
+        .transition(all 200ms ease-in-out);
+    }
+    // 遮罩 end
+    // 主体 begin
+    .side-menu-body
+    {
+        font-size: 28rem/@r;
+
+        z-index: 900;
+
+        color: @color-white;
+
+        .linear-gradient(135deg, rgb(89,220,196), rgb(0,191,242));
+        .size(500rem/@r,100%);
+        .fixed(0,0,0,_);
+        .translateX(100%);
+        .transition(all 200ms ease-in-out);
+        .display(flex);
+        .flex-direction(column);
+        .padding(45rem/@r,_,_);
+    }
+    // 主体 end
+    // 显示时 begin
+    &.show
+    {
+        pointer-events: auto;
+        // 遮罩 begin
+        .mask
+        {
+            opacity: 1;
+        }
+        // 遮罩 end
+        // 主体 begin
+        .side-menu-body
+        {
+            z-index: 2100;
+
+            .transform(translateX(0));
+
+            .translateX(0);
+            .box-shadow(0 0 20rem/@r rgba(0,0,0,.3));
+        }
+        // 主体 end
+        // page begin
+        & + .page
+        {
+            .translateX(-500rem/@r);
+        }
+        // page end
+    }
+    // 显示时 end
+    // 链接颜色 begin
+    a
+    {
+        color: @color-white;
+        &:active
+        {
+            color: fadeout(@color-white,35%);
+        }
+    }
+    // 链接颜色 end
+    // 菜单 begin
+    .category-list
+    {
+        .margin(_,_,auto,40rem/@r);
+        li
+        {
+            a
+            {
+                display: block;
+            }
+        }
+        dl
+        {
+            height: 80rem/@r;
+
+            .display(flex);
+            .align-items(center);
+        }
+        dt,
+        dd
+        {
+            height: 100%;
+
+            border-bottom: 1px solid transparent;
+
+            .display(flex);
+            .align-items(center);
+        }
+        dt
+        {
+            .size(100rem/@r,100%);
+            .justify-content(center);
+            .font-osd
+            {
+                font-size: 40rem/@r;
+            }
+        }
+        dd
+        {
+            border-bottom-color: @color-white;
+
+            .flex(1);
+            .padding(_,40rem/@r,_,_);
+            strong
+            {
+                font-size: 28rem/@r;
+                font-weight: normal;
+
+                .margin(_,auto,_,_);
+            }
+            .font-osd
+            {
+                font-size: 24rem/@r;
+            }
+        }
+    }
+    // 菜单 end
+    // 帮助信息列表 begin
+    .help-list
+    {
+        font-size: 26rem/@r;
+        line-height: 70/26;
+
+        text-align: center;
+
+        .margin(_,_,20rem/@r,_);
+        a
+        {
+            display: block;
+        }
+    }
+    // 帮助信息列表 end
+    // 底边栏 begin
+    .bottom-bar
+    {
+        height: 80rem/@r;
+        min-height: 80rem/@r;
+
+        background-color: #333e42;
+
+        .display(flex);
+        li
+        {
+            height: 100%;
+
+            text-align: center;
+
+            .flex(1);
+            a
+            {
+                display: block;
+
+                height: 100%;
+
+                .display(flex);
+                .align-items(center);
+                .justify-content(center);
+            }
+            .font-osd
+            {
+                font-size: 36rem/@r;
+            }
+        }
+    }
+    // 底边栏 end
+}

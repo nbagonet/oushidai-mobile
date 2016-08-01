@@ -1,0 +1,117 @@
+@import '../../less/conf.less';
+
+.corporation
+{
+    background-color: @color-white;
+
+    .box-shadow(0 1rem/@r 4rem/@r 0 rgba(0,0,0,.15));
+    // 标题栏 begin
+    .corporation-header
+    {
+        position: relative;
+
+        height: 52rem/@r;
+
+        background-color: rgba(255,255,255,.85);
+
+        .box-shadow(1rem/@r 1rem/@r 3rem/@r 0 rgba(0,0,0,.3));
+        // 返回按钮 begin
+        .back
+        {
+            font-size: 24rem/@r;
+
+            z-index: 100;
+
+            color: #9e9d9c;
+
+            .absolute(0,_,0,0);
+            i
+            {
+                .margin(_,10rem/@r,_,_);
+            }
+            a
+            {
+                height: 100%;
+
+                color: #9e9d9c;
+
+                .display(flex);
+                .align-items(center);
+                .justify-content(center);
+                .padding(_,30rem/@r);
+                &:active
+                {
+                    color: @color-link-active;
+                }
+            }
+        }
+        // 返回按钮 end
+        // 标题 begin
+        .title
+        {
+            font-size: 30rem/@r;
+
+            color: #464646;
+
+            .display(flex);
+            .align-items(center);
+            .size(100%);
+            .justify-content(center);
+            strong
+            {
+                font-weight: normal;
+            }
+        }
+        // 标题 end
+    }
+    // 标题栏 end
+    // 内容 begin
+    .corporation-content
+    {
+        font-size: 26rem/@r;
+        line-height: 48/26;
+
+        text-align: justify;
+        word-wrap: break-word;
+        word-break: break-all;
+
+        color: #464646;
+
+        .padding(20rem/@r,40rem/@r);
+        p
+        {
+            .margin(.5em,_);
+        }
+        iframe
+        {
+            width: 100%;
+            height: 400rem/@r;
+
+            .margin(.5em,_);
+        }
+        a
+        {
+            color: @color-link-hover;
+            &:active
+            {
+                color: @color-link-active;
+            }
+        }
+        ul
+        {
+            list-style: disc;
+
+            .margin(_,_,_,1.5em);
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6
+        {
+            .margin(.5em,_);
+        }
+    }
+    // 内容 end
+}

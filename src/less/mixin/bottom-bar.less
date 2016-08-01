@@ -1,0 +1,59 @@
+/**
+ * 各种底部渐变条的mixin
+ */
+
+// 资讯版
+.bottom-bar-news()
+{
+    &:after
+    {
+        overflow: hidden;
+
+        content: '';
+
+        .size(100%,5rem/@r);
+        .horizontal-gradient(rgb(89,220,196),rgb(0,191,242));
+        .absolute(_,0,0,0);
+    }
+}
+.top-bar-news()
+{
+    &:after
+    {
+        overflow: hidden;
+
+        content: '';
+
+        .size(100%,5rem/@r);
+        .horizontal-gradient(rgb(89,220,196),rgb(0,191,242));
+        .absolute(0,0,_,0);
+    }
+}
+
+// 活动版
+.bottom-bar-event()
+{
+    &:after
+    {
+        overflow: hidden;
+
+        content: '';
+
+        .size(100%,5rem/@r);
+        .horizontal-gradient(rgb(194,228,47),rgb(116,214,37));
+        .absolute(_,0,0,0);
+    }
+}
+.top-bar-event()
+{
+    &:after
+    {
+        overflow: hidden;
+
+        content: '';
+
+        .size(100%,5rem/@r);
+        .horizontal-gradient(rgb(194,228,47),rgb(116,214,37));
+        .absolute(0,0,_,0);
+    }
+}

@@ -1,0 +1,97 @@
+@import '../../less/conf.less';
+
+// 列表 begin
+.loading-list
+{
+    text-align: center;
+    .inner
+    {
+        background-color: @color-white;
+
+        .box-shadow(0 1rem/@r 4rem/@r 0 rgba(0,0,0,.15));
+        .margin(15rem/@r,_);
+        .padding(20rem/@r,40rem/@r);
+        .inline-block();
+        .border-radius(6rem/@r);
+        i,
+        span
+        {
+            vertical-align: middle;
+
+            .inline-block();
+        }
+        i
+        {
+            font-size: 24rem/@r;
+
+            color: #999ea0;
+
+            .margin(_,25rem/@r,_,_);
+            .animation(loading-list-rotate 1s linear infinite);
+        }
+        span
+        {
+            font-size: 24rem/@r;
+
+            letter-spacing: .3em;
+
+            color: @color-darker-grey;
+        }
+    }
+}
+// 列表 end
+
+// 全局 begin
+.loading-global
+{
+    z-index: 99999;
+
+    background-color: rgba(0,0,0,.25);
+
+    .fixed(0,0,0,0);
+    .display(flex);
+    .align-items(center);
+    .justify-content(center);
+    .inner
+    {
+
+        color: @color-white;
+        background-color: rgba(0,0,0,.65);
+        .padding(20rem/@r);
+        .border-radius(4rem/@r);
+        &:after
+        {
+          content: '';
+          background: url('../../assets/img/icon/loading1.png');
+          background-size: cover;
+          .size(40rem/@r);
+            .animation(loading-zoom 750ms linear infinite);
+            display: block;
+        }
+    }
+}
+// 全局 end
+
+
+@keyframes loading-list-rotate
+{
+    0%
+    {
+        .rotate(0deg);
+    }
+    100%
+    {
+        .rotate(360deg);
+    }
+}
+@keyframes loading-zoom{
+  0%{
+    .scale(1);
+  }
+  50%{
+    .scale(1.5);
+  }
+  100%{
+    .scale(1);
+  }
+}

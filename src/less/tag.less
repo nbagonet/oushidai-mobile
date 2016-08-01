@@ -1,0 +1,169 @@
+// ==========
+// Tag样式
+// ==========
+
+@import './conf.less';
+@import './mixin.less';
+
+// ==========
+// 配置
+// ==========
+
+
+// ==========
+// 样式
+// ==========
+
+/**
+ * Tag
+ */
+.tag
+{
+    // 基础
+    font-size: 14px;
+    line-height: 20px;
+
+    position: relative;
+
+    vertical-align: middle;
+    white-space: nowrap;
+
+    border-width: 1px;
+    border-style: solid;
+
+    .inline-block();
+    .margin(5px,5px,5px,10px);
+    .border-radius(4px);
+    .padding(_,7px,_,4px);
+    &,
+    & > span,
+    &:before,
+    &:after
+    {
+        .transition(all @default-transition-time ease-in-out);
+    }
+    // 文字容器
+    > span
+    {
+        position: relative;
+        z-index: 20;
+    }
+    // 尖角
+    &:before
+    {
+        z-index: 1;
+
+        content: '';
+
+        border-width: 1px;
+        border-style: solid;
+
+        .box-sizing(content-box);
+        .size(10px*sqrt(2));
+        .absolute(2px,_,0,-7px);
+        .rotate(45.5deg); // qq浏览器的旧版webkit内核bug，45deg时，背景色和边框之间有空白，需增加0.2deg+
+        .border-radius(2px 0 3px 4px);
+    }
+    // 遮罩（用于遮盖尖角左侧的2个边）
+    &:after
+    {
+        z-index: 2;
+
+        content: '';
+
+        .size(15px,20px);
+        .absolute(0,_,_,0);
+        .border-radius(2px);
+    }
+}
+
+// 主题
+.tag
+{
+    // 基本
+    .tag-variant(@tag-base-bg,@tag-base-border,@tag-base-color, @tag-base-hover-bg,@tag-base-hover-border,@tag-base-hover-color, @tag-base-active-bg,@tag-base-active-border,@tag-base-active-color);
+    // 灰色
+    &.grey
+    {
+        .tag-variant(@tag-grey-bg,@tag-grey-border,@tag-grey-color, @tag-grey-hover-bg,@tag-grey-hover-border,@tag-grey-hover-color, @tag-grey-active-bg,@tag-grey-active-border,@tag-grey-active-color);
+    }
+    // 灰色-dark
+    &.grey-dark
+    {
+        .tag-variant(@tag-grey-dark-bg,@tag-grey-dark-border,@tag-grey-dark-color, @tag-grey-dark-hover-bg,@tag-grey-dark-hover-border,@tag-grey-dark-hover-color, @tag-grey-dark-active-bg,@tag-grey-dark-active-border,@tag-grey-dark-active-color);
+    }
+    // 灰色-dark-l
+    &.grey-dark-l
+    {
+        .tag-variant(@tag-grey-dark-l-bg,@tag-grey-dark-l-border,@tag-grey-dark-l-color, @tag-grey-dark-l-hover-bg,@tag-grey-dark-l-hover-border,@tag-grey-dark-l-hover-color, @tag-grey-dark-l-active-bg,@tag-grey-dark-l-active-border,@tag-grey-dark-l-active-color);
+    }
+    // 灰色-dark-xl
+    &.grey-dark-xl
+    {
+        .tag-variant(@tag-grey-dark-xl-bg,@tag-grey-dark-xl-border,@tag-grey-dark-xl-color, @tag-grey-dark-xl-hover-bg,@tag-grey-dark-xl-hover-border,@tag-grey-dark-xl-hover-color, @tag-grey-dark-xl-active-bg,@tag-grey-dark-xl-active-border,@tag-grey-dark-xl-active-color);
+    }
+    // 灰色-dark-xxl
+    &.grey-dark-xxl
+    {
+        .tag-variant(@tag-grey-dark-xxl-bg,@tag-grey-dark-xxl-border,@tag-grey-dark-xxl-color, @tag-grey-dark-xxl-hover-bg,@tag-grey-dark-xxl-hover-border,@tag-grey-dark-xxl-hover-color, @tag-grey-dark-xxl-active-bg,@tag-grey-dark-xxl-active-border,@tag-grey-dark-xxl-active-color);
+    }
+    // 白色背景白色边框-white-nb
+    &.white-nb
+    {
+        .tag-variant(@color-white,@color-white,@color-darker-grey, @tag-base-hover-bg,@tag-base-hover-border,@tag-base-hover-color, @tag-base-active-bg,@tag-base-active-border,@tag-base-active-color);
+        .opacity(90%);
+    }
+    // 白色背景蓝色边框-white-blue
+    &.white-blue
+    {
+        .tag-variant(@color-white,@color-link-active,@color-dark-grey, @tag-base-hover-bg,@tag-base-hover-border,@tag-base-hover-color, @color-white,@color-link-hover,@color-dark-grey);
+    }
+    // 白色背景灰边框-white-grey
+    &.white-grey
+    {
+        .tag-variant(@color-white,@color-light-grey,@color-dark-grey, @tag-base-active-bg,@tag-base-active-border,@color-dark-grey, @color-white,@color-link-active,@color-dark-grey);
+    }
+    // 白色背景深灰边框-white-dark-grey
+    &.white-dark-grey
+    {
+        .tag-variant(@color-white,@dark-grey-blue,@dark-grey-blue, @tag-base-active-bg,@tag-base-active-border,@tag-base-active-border, @color-white,@color-link-active,@color-link-active);
+    }
+}
+
+// 关闭按钮
+.tag
+{
+    .close
+    {
+        font-family: Arial,sans-serif;
+        font-size: 14px;
+        line-height: 14px;
+
+        z-index: 100;
+
+        overflow: hidden;
+
+        text-align: center;
+
+        color: @color-white;
+        border: 1px solid @medium-grey-blue;
+        background-color: @medium-grey-blue;
+
+        .size(16px);
+        .border-radius(50%);
+        .absolute(-2px,-2px,_,_);
+        .translate(50%,-25%);
+        .transition(all @default-transition-time ease-in-out);
+        &:hover
+        {
+            color: @color-link-hover;
+            border-color: @color-link-hover;
+            background-color: @color-white;
+        }
+        &:active
+        {
+            border-color: @color-link-active;
+            background-color: @color-link-active;
+        }
+    }
+}

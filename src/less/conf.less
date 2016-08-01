@@ -1,0 +1,210 @@
+// ==========
+// Less配置
+// ==========
+@import './mixin.less';
+@import '../../node_modules/less-plugin-est/src/all.less';
+@support-ie-version: 11;
+
+
+// ==========
+// 比例尺
+// ==========
+@r: 64;
+
+
+// ==========
+// 路径
+// ==========
+@_img : '../assets/img';
+@_iconfont: '../assets/iconfont';
+
+
+// ==========
+// 字体
+// ==========
+
+// 默认字体
+@font-default: 'PingFang SC', 'Lantinghei SC', 'Microsoft Yahei', 'Hiragino Sans GB', 'Microsoft Sans Serif', 'WenQuanYi Micro Hei', 'sans';
+
+// 默认字重
+@font-weight-default: 300;
+
+// 默认文字颜色
+@font-default-color  :@color-light-black;
+
+// 默认文字大小
+@font-size-default   : 24rem/@r;
+@font-size-s         : 18rem/@r;
+@font-size-xs        : 12rem/@r;
+@font-size-l         : 18px;
+@font-size-xl        : 20px;
+@font-size-xxl       : 24px;
+
+// 默认行高
+@line-height-default : 1;
+
+
+// ==========
+// 标准颜色
+// ==========
+
+// 浅灰蓝
+@lightest-grey-blue :                #ecf2f3;
+@lighter-grey-blue :                 #dee3e5;
+@light-grey-blue :                   #cad6da;
+// 中灰蓝
+@medium-grey-blue :                  #8fa1a7;
+// 深灰蓝
+@dark-grey-blue :                    #75878d;
+@darker-grey-blue :                  #516167;
+@darkest-grey-blue :                 #2b3f45;
+// 标准蓝色
+// @standard-blue      : #00a9db;
+@standard-blue :                     #00cdd7;
+// 高亮蓝色
+// @highlight-blue     : #00c8f0;
+@highlight-blue :                    #00e6e8;
+// 白色
+@color-white :                       #fff;
+// 绿色
+// @color-green        : #a6c000;
+@color-green :                       #9bd200;
+// 浅灰
+@color-light-grey :                  #ccd5d6;
+// 中灰
+@color-grey :                        #787878;
+// 深灰
+@color-dark-grey :                   #5f5f5f;
+@color-darker-grey :                 #464646;
+// 紫色
+@color-purple :                      #954cd6;
+// 黄色
+@color-yellow :                      #ffbe00;
+// 黑色
+@color-black :                       #000;
+// 浅黑
+@color-light-black :                 #232424;
+// 红色
+@color-red :                         #e32f25;
+@color-dark-red :                    #c34430;
+
+
+// ==========
+// 页面背景色
+// ==========
+@page-bgcolor : @lightest-grey-blue;
+
+
+// ==========
+// 链接颜色
+// ==========
+
+// 链接颜色
+@color-link        : @color-black;
+// 链接hover颜色
+@color-link-hover  : @standard-blue;
+// 链接active颜色
+@color-link-active : @highlight-blue;
+
+
+// ==========
+// 用户头像
+// ==========
+
+// 尺寸
+@avatar-size-md             : 60rem/@r;
+@avatar-size-lg             : 80rem/@r;
+@avatar-size-sm             : 30rem/@r;
+@avatar-size-xl             : 100rem/@r;
+@avatar-size-xxl            : 120rem/@r;
+@avatar-size-xxxl           : 140rem/@r;
+@avatar-size-xxxxl          : 160rem/@r;
+
+// 边框
+@avatar-border-size         : 1px;
+@avatar-border-color        : rgba(0,0,0,0);
+@avatar-border-highlight    : @color-light-grey;
+@avatar-hover-border-color  : @standard-blue;
+@avatar-active-border-color : @highlight-blue;
+
+// 圆角
+@avatar-border-radius       : 50%;
+
+
+// ==========
+// 时间
+// ==========
+
+// 默认过渡动画时长
+@default-transition-time : .2s;
+
+
+// ==========
+// Tag
+// ==========
+
+// 基本颜色-标准蓝
+@tag-base-bg                    : @standard-blue;
+@tag-base-border                : @standard-blue;
+@tag-base-color                 : @color-white;
+@tag-base-hover-bg              : @highlight-blue;
+@tag-base-hover-border          : @highlight-blue;
+@tag-base-hover-color           : @color-white;
+@tag-base-active-bg              : @color-white;
+@tag-base-active-border          : @highlight-blue;
+@tag-base-active-color           : @highlight-blue;
+
+// 灰色
+@tag-grey-bg                    : rgb(222,227,229);
+@tag-grey-border                : @tag-grey-bg;
+@tag-grey-color                 : @color-darker-grey;
+@tag-grey-hover-bg              : @highlight-blue;
+@tag-grey-hover-border          : @highlight-blue;
+@tag-grey-hover-color           : @color-white;
+@tag-grey-active-bg              : @color-white;
+@tag-grey-active-border          : @highlight-blue;
+@tag-grey-active-color           : @highlight-blue;
+
+// 灰色-dark
+@tag-grey-dark-bg               : rgb(143,161,167);
+@tag-grey-dark-border           : @tag-grey-dark-bg;
+@tag-grey-dark-color            : @color-white;
+@tag-grey-dark-hover-bg              : @highlight-blue;
+@tag-grey-dark-hover-border          : @highlight-blue;
+@tag-grey-dark-hover-color           : @color-white;
+@tag-grey-dark-active-bg              : @color-white;
+@tag-grey-dark-active-border          : @highlight-blue;
+@tag-grey-dark-active-color           : @highlight-blue;
+
+// 灰色-dark-l
+@tag-grey-dark-l-bg             : rgb(117,135,141);
+@tag-grey-dark-l-border         : @tag-grey-dark-l-bg;
+@tag-grey-dark-l-color          : @color-white;
+@tag-grey-dark-l-hover-bg              : @highlight-blue;
+@tag-grey-dark-l-hover-border          : @highlight-blue;
+@tag-grey-dark-l-hover-color           : @color-white;
+@tag-grey-dark-l-active-bg              : @color-white;
+@tag-grey-dark-l-active-border          : @highlight-blue;
+@tag-grey-dark-l-active-color           : @highlight-blue;
+
+// 灰色-dark-xl
+@tag-grey-dark-xl-bg            : rgb(81,97,103);
+@tag-grey-dark-xl-border        : @tag-grey-dark-xl-bg;
+@tag-grey-dark-xl-color         : @color-white;
+@tag-grey-dark-xl-hover-bg              : @highlight-blue;
+@tag-grey-dark-xl-hover-border          : @highlight-blue;
+@tag-grey-dark-xl-hover-color           : @color-white;
+@tag-grey-dark-xl-active-bg              : @color-white;
+@tag-grey-dark-xl-active-border          : @highlight-blue;
+@tag-grey-dark-xl-active-color           : @highlight-blue;
+
+// 灰色-dark-xxl
+@tag-grey-dark-xxl-bg           : rgb(43,63,69);
+@tag-grey-dark-xxl-border       : @tag-grey-dark-xxl-bg;
+@tag-grey-dark-xxl-color        : @color-white;
+@tag-grey-dark-xxl-hover-bg              : @highlight-blue;
+@tag-grey-dark-xxl-hover-border          : @highlight-blue;
+@tag-grey-dark-xxl-hover-color           : @color-white;
+@tag-grey-dark-xxl-active-bg              : @color-white;
+@tag-grey-dark-xxl-active-border          : @highlight-blue;
+@tag-grey-dark-xxl-active-color           : @highlight-blue;

@@ -1,0 +1,128 @@
+@import '../../less/conf.less';
+
+.user-banner
+{
+    position: relative;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    .padding(85rem/@r,_,30rem/@r);
+    &,
+    & *
+    {
+        .transition(all @default-transition-time ease-in-out);
+    }
+    // 渐变遮罩 begin
+    &:after
+    {
+        z-index: 2;
+
+        content: '';
+
+        opacity: .4;
+
+        .absolute(40%,0,0,0);
+        .vertical-gradient(rgba(0,0,0,0),rgba(0,0,0,1));
+    }
+    // 渐变遮罩 end
+    // 背景图 begin
+    .banner
+    {
+        z-index: 1;
+
+        background-color: @color-darker-grey;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: cover;
+
+        .absolute(-10rem/@r,-10rem/@r,-10rem/@r,-10rem/@r);
+        filter: blur(4rem/@r);
+        .animation(ocenter-banner-bg 15s linear forwards);
+    }
+    // 背景图 end
+    // 头像 begin
+    .avatar
+    {
+        z-index: 100;
+
+        overflow: visible;
+        .pic
+        {
+            border-width: 4rem/@r;
+            border-color: fadeout(@color-white,40%);
+            background-color: transparent;
+
+            .box-shadow(0 0 6rem/@r rgba(0,0,0,.125));
+            img
+            {
+                background-size: cover;
+
+                .scale(1.05);
+            }
+        }
+    }
+    // 头像 end
+    // 昵称 begin
+    .nick
+    {
+        font-size: 32rem/@r;
+
+        position: relative;
+        z-index: 100;
+
+        display: table;
+
+        color: @color-white;
+
+        .margin(30rem/@r,auto,_);
+        .glow-text(rgba(0,0,0,.25), 6rem/@r);
+    }
+    // 昵称 end
+    // 身份 begin
+    .type
+    {
+        position: relative;
+        z-index: 100;
+
+        display: table;
+
+        .margin(15rem/@r,auto,_);
+        i
+        {
+            .glow-text(rgba(0,0,0,.25), 6rem/@r);
+        }
+        em
+        {
+            .box-shadow(0 0 6rem/@r rgba(0,0,0,.25));
+        }
+    }
+    // 身份 end
+    // 简介 begin
+    .intro
+    {
+        font-size: 22rem/@r;
+        line-height: 32/22;
+
+        position: relative;
+        z-index: 100;
+
+        color: @color-white;
+
+        .margin(15rem/@r,80rem/@r,_);
+        .glow-text(rgba(0,0,0,.25), 6rem/@r);
+    }
+    // 简介 end
+}
+@keyframes ocenter-banner-bg
+{
+    // 0%
+    // {
+    //     .scale(1);
+    // }
+    // 100%
+    // {
+    //     .scale(1.2);
+    // }
+}

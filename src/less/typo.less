@@ -1,0 +1,330 @@
+.typo
+{
+    -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+    text-rendering: optimizelegibility;
+    *
+    {
+        .box-sizing(border-box);
+    }
+    dl,
+    dt,
+    dd,
+    ul,
+    ol,
+    li,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    pre,
+    code,
+    form,
+    fieldset,
+    legend,
+    input,
+    textarea,
+    p,
+    blockquote,
+    th,
+    td,
+    hr,
+    button,
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    menu,
+    nav,
+    section
+    {
+        margin: 0;
+        padding: 0;
+    }
+    audio,
+    canvas,
+    video
+    {
+        display: inline-block;
+    }
+    table
+    {
+        border-spacing: 0;
+        border-collapse: collapse;
+    }
+    fieldset,
+    img
+    {
+        border: 0;
+    }
+    blockquote
+    {
+        font-weight: 400;
+
+        position: relative;
+
+        margin: 1em 0;
+
+        color: #999;
+
+        .padding(.6em,3em,0);
+        &:before
+        {
+            font-size: 3em;
+            line-height: 1;
+
+            position: absolute;
+            top: -.2em;
+            left: 0;
+
+            content: '“';
+
+            color: #999;
+        }
+        &:after
+        {
+            font-size: 3em;
+            line-height: 1;
+
+            position: absolute;
+            right: 0;
+            bottom: .2em;
+
+            content: '”';
+
+            color: #999;
+        }
+    }
+    acronym,
+    abbr
+    {
+        font-variant: normal;
+
+        border-bottom: 1px dotted;
+    }
+    abbr
+    {
+        cursor: help;
+    }
+    del
+    {
+        text-decoration: line-through;
+    }
+    address,
+    caption,
+    cite,
+    code,
+    dfn,
+    em,
+    th,
+    var
+    {
+        font-weight: 400;
+        font-style: normal;
+    }
+    ul,
+    ol
+    {
+        list-style: none;
+    }
+    caption,
+    th
+    {
+        text-align: left;
+    }
+    sub,
+    sup
+    {
+        font-size: 75%;
+        line-height: 0;
+
+        position: relative;
+    }
+    :root sub,
+    :root sup
+    {
+        vertical-align: baseline; /* for ie9 and other modern browsers */
+    }
+    sup
+    {
+        top: -.5em;
+    }
+    sub
+    {
+        bottom: -.25em;
+    }
+    ins,
+    a
+    {
+        text-decoration: none;
+    }
+    a
+    {
+        color: @color-link-hover;
+        &:hover,
+        &:active
+        {
+            text-decoration: underline;
+
+            color: @color-link-active;
+        }
+    }
+    u
+    {
+        text-decoration: underline;
+    }
+    mark
+    {
+        margin: 0 5px;
+        padding: 2px;
+
+        border-bottom: 1px solid #ffedce;
+        background: #fffdd1;
+    }
+    pre,
+    code,
+    pre tt
+    {
+        font-family: Courier, 'Courier New', monospace;
+    }
+    pre
+    {
+        display: block;
+
+        padding: 1em 1.5em;
+
+        border: 1px solid #ddd;
+        background: #f8f8f8;
+
+        -webkit-overflow-scrolling: touch;
+    }
+    hr
+    {
+        height: 10px;
+        margin-bottom: .8em;
+
+        border: none;
+        border-bottom: 1px solid #cfcfcf;
+    }
+    small,
+    figcaption
+    {
+        font-size: .9em;
+
+        color: #888;
+    }
+    strong,
+    b
+    {
+        font-weight: bold;
+
+        color: #000;
+    }
+    [draggable]
+    {
+        cursor: move;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6
+    {
+        // font-weight: 100;
+        line-height: 1.35;
+
+        margin-top: 1.2em;
+        margin-bottom: .6em;
+
+        color: #000;
+    }
+    h1
+    {
+        font-size: 2em;
+    }
+    h2
+    {
+        font-size: 1.8em;
+    }
+    h3
+    {
+        font-size: 1.6em;
+    }
+    h4
+    {
+        font-size: 1.4em;
+    }
+    h5,
+    h6
+    {
+        font-size: 1.2em;
+    }
+    ul
+    {
+        margin-left: 1.3em;
+
+        list-style: disc;
+    }
+    ol
+    {
+        margin-left: 1.9em;
+
+        list-style: decimal;
+    }
+    li ul,
+    li ol
+    {
+        margin-bottom: .8em;
+        margin-left: 2em;
+    }
+    li ul
+    {
+        list-style: circle;
+    }
+    table th,
+    table td,
+    table caption
+    {
+        padding: .5em 1em;
+
+        color: #666;
+        border: 1px solid #ddd;
+    }
+    table th
+    {
+        background: #fbfbfb;
+    }
+    table thead th
+    {
+        background: #f1f1f1;
+    }
+    table caption
+    {
+        border-bottom: none;
+    }
+    input,
+    textarea
+    {
+        border-radius: 0;
+
+        -webkit-appearance: none;
+    }
+    em,
+    legend,
+    caption
+    {
+        font-weight: inherit;
+    }
+    p
+    {
+        clear: inherit!important;
+
+        .margin(1em,_);
+    }
+}

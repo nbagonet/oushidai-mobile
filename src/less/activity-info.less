@@ -1,0 +1,145 @@
+@import './conf.less';
+
+// 活动信息 begin
+.activity-info
+{
+    z-index: 100;
+
+    .absolute(_,0,20rem/@r,_);
+    &,
+    & > a
+    {
+        .display(flex);
+    }
+    // 起止时间 begin
+    .activity-date
+    {
+        height: 80rem/@r;
+
+        text-align: center;
+
+        color: #464646;
+        background-color: rgba(255,255,255,.85);
+
+        .padding(_,15rem/@r);
+        .display(flex);
+        .align-items(center);
+        .justify-content(center);
+        strong,
+        small
+        {
+            display: block;
+
+            text-align: center;
+        }
+        strong
+        {
+            font-size: 22rem/@r;
+            font-weight: 300;
+        }
+        small
+        {
+            // font-weight: bold;
+            font-size: 44rem/@r;
+        }
+        li
+        {
+            position: relative;
+            &:nth-child(2)
+            {
+                .padding(_,_,_,20rem/@r);
+            }
+            &:nth-child(2):before
+            {
+                overflow: hidden;
+
+                content: '';
+
+                background-color: #464646;
+
+                .size(8rem/@r,1px);
+                .absolute(50%,_,_,6rem/@r);
+            }
+        }
+    }
+    // 起止时间 end
+    // 费用和城市 begin
+    .activity-pandc
+    {
+        height: 80rem/@r;
+
+        .margin(_,_,_,1px);
+        .display(flex);
+        .flex-direction(column);
+        // 费用 begin
+        .activity-price
+        {
+            font-size: 32rem/@r;
+            // min-width: 190rem/@r;
+
+            text-align: center;
+
+            color: @color-white;
+            background-color: fadein(#954cd6, 90%);
+
+            .flex(44);
+            .margin(_,_,1px,_);
+            .display(flex);
+            .align-items(center);
+            .justify-content(center);
+            .padding(_,20rem/@r);
+            strong
+            {
+                font-weight: 300;
+            }
+            small
+            {
+                font-size: 18rem/@r;
+            }
+            // 平摊费用 begin
+            &.equally
+            {
+                background-color: fadein(#954cd6, 90%);
+            }
+            // 平摊费用 end
+            // 其他 begin
+            &.others
+            {
+                background-color: fadein(@color-yellow, 90%);
+            }
+            // 其他 end
+            // 免费 begin
+            &.free
+            {
+                background-color: fadein(#6ebd5c, 90%);
+            }
+            // 免费 end
+        }
+        // 费用 end
+        // 城市 begin
+        .activity-city
+        {
+            font-size: 20rem/@r;
+
+            text-align: center;
+
+            color: #464646;
+            background-color: rgba(255,255,255,.85);
+
+            .flex(30);
+            .display(flex);
+            .align-items(center);
+            .justify-content(center);
+            .padding(_,10rem/@r);
+            i
+            {
+                font-size: 18rem/@r;
+
+                .margin(_,5rem/@r,_,_);
+            }
+        }
+        // 城市 end
+    }
+    // 费用和城市 end
+}
+// 活动信息 end

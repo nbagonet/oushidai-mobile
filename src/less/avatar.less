@@ -1,0 +1,112 @@
+// ==========
+// 用户头像
+// ==========
+
+.avatar
+{
+    position: relative;
+
+    overflow: hidden;
+
+    .inline-block();
+    .size(@avatar-size-md);
+    > .pic
+    {
+        position: relative;
+        z-index: 10;
+
+        display: block;
+        overflow: hidden;
+
+        border: @avatar-border-size solid @avatar-border-color;
+        background-color: @avatar-border-color;
+
+        .border-radius(@avatar-border-radius);
+        .size(100%);
+        .transition(all @default-transition-time ease-in-out);
+    }
+    img
+    {
+        display: block;
+
+        background-size: cover;
+
+        .size(100%);
+        .border-radius(@avatar-border-radius);
+    }
+    // 非白色环境
+    &.avatar-highlight
+    {
+        > .pic
+        {
+            border-color: @avatar-border-highlight;
+        }
+    }
+    // 尺寸
+    &.avatar-md
+    {
+        .size(@avatar-size-md);
+    }
+    &.avatar-lg
+    {
+        .size(@avatar-size-lg);
+    }
+    &.avatar-sm
+    {
+        .size(@avatar-size-sm);
+    }
+    &.avatar-xl
+    {
+        .size(@avatar-size-xl);
+    }
+    &.avatar-xxl
+    {
+        .size(@avatar-size-xxl);
+    }
+    &.avatar-xxxl
+    {
+        .size(@avatar-size-xxxl);
+    }
+    &.avatar-xxxxl
+    {
+        .size(@avatar-size-xxxxl);
+    }
+    // 触发状态
+    &:hover,
+    &:focus
+    {
+        > .pic
+        {
+            border-color: @avatar-hover-border-color;
+        }
+    }
+    &:active
+    {
+        > .pic
+        {
+            border-color: @avatar-active-border-color;
+        }
+    }
+}
+// 触发状态
+a:hover,
+a:focus
+{
+    .avatar
+    {
+        > .pic
+        {
+            border-color: @avatar-hover-border-color;
+        }
+    }
+}
+a:active
+{
+    .avatar
+    {
+        > .pic
+        {
+            border-color: @avatar-active-border-color;
+        }
+    }
+}

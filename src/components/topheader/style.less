@@ -1,0 +1,120 @@
+@import '../../less/conf.less';
+
+// 正文页版 begin
+.topheader
+{
+    position: relative;
+    font-size: 24rem/@r;
+
+    z-index: 1990;
+
+    color: @medium-grey-blue;
+    background-color: fadeout(@color-white,15%);
+    // .absolute(70rem/@r,0,_,0);
+
+    .transition(all 200ms ease-in);
+    .box-shadow(0 0 10px rgba(0,0,0,.3));
+    .display(flex);
+    .align-items(center);
+    .padding(_,30rem/@r);
+    .font-osd
+    {
+        font-size: 32rem/@r;
+    }
+    .back,
+    .prev,
+    .next,
+    .btn-filter
+    {
+        a
+        {
+            .display(flex);
+            .align-items(center);
+            .padding(10rem/@r,_);
+        }
+        span + .font-osd,
+        .font-osd + span
+        {
+            .margin(_,_,_,10rem/@r);
+        }
+    }
+    .back
+    {
+        .margin(_,auto,_,_);
+    }
+    .prev + .next
+    {
+        .margin(_,_,_,70rem/@r);
+    }
+    a
+    {
+        color: @medium-grey-blue;
+        &:active
+        {
+            color: @color-link-active;
+        }
+    }
+    .title {
+        position: absolute;
+        left: 260rem/@r;
+        top: 10rem/@r;
+        font-size: 20px;
+        color: lighten(#000, 30%);
+        font-weight: bold;
+        vertical-align: middle;
+    }
+    .btn-filter {
+        position: absolute;
+        // float: right;
+        right: 20rem/@r;
+        // top: 3rem/@r;
+        // display: flex;
+        align-items: center;
+        // i.font-osd {
+        //     margin-left: 10rem/@r;
+        //     margin-right: 10rem/@r;
+        // }
+    }
+}
+// 正文页版
+
+// 用户中心版 begin
+.ocenter-toolbar
+{
+    z-index: 1990;
+
+    .absolute(70rem/@r,0,_,0);
+    .clearfix();
+    // 返回按钮
+    .btn-back
+    {
+        float: left;
+
+        .margin(12rem/@r,_,_,30rem/@r);
+        a
+        {
+            font-size: 30rem/@r;
+
+            overflow: hidden;
+
+            color: @color-darker-grey;
+            background-color: rgba(255,255,255,.96);
+
+            .display(flex);
+            .align-items(center);
+            .justify-content(center);
+            .size(60rem/@r);
+            .box-shadow(0 0 3rem/@r rgba(0,0,0,.15));
+            .border-radius(50%);
+            &:active
+            {
+                background-color: rgba(255,255,255,.5);
+            }
+            i
+            {
+                .translateX(-10%);
+            }
+        }
+    }
+}
+// 用户中心版 end

@@ -1,0 +1,84 @@
+@import '../less/conf.less';
+@import (inline) '../../node_modules/swiper/dist/css/swiper.min.css';
+
+.page
+{
+    position: relative;
+    z-index: 1000;
+
+    // .translateX(0);
+    .transition(transform 200ms ease-in-out);
+    .size(100%,auto);
+    // .transform(translate3D(0,0,0));
+    // 锁定滚动 begin
+    &.lockScroll
+    {
+        overflow: hidden;
+
+        height: 100vh;
+    }
+    // 锁定滚动 end
+}
+
+// 视图切换动效 begin
+.view
+{
+    .appslide-transition
+    {
+        // z-index: 1000;
+        //
+        // width: 100vw;
+        // min-height: 100vh;
+        //
+        // background-color: @color-white;
+        // background-image: url('@{_img}/common/bg-page.png');
+        // background-image: -webkit-image-set(url('@{_img}/common/bg-page.png') 1x,url('@{_img}/common/bg-page-2x.png') 2x);
+        // background-image:    -moz-image-set(url('@{_img}/common/bg-page.png') 1x,url('@{_img}/common/bg-page-2x.png') 2x);
+        // background-image:      -o-image-set(url('@{_img}/common/bg-page.png') 1x,url('@{_img}/common/bg-page-2x.png') 2x);
+        // background-image:     -ms-image-set(url('@{_img}/common/bg-page.png') 1x,url('@{_img}/common/bg-page-2x.png') 2x);
+        // background-repeat: repeat;
+        //
+        // .box-shadow(0 0 20rem/@r rgba(0,0,0,.35));
+        // .transition(all .4s ease);
+        // .padding(70rem/@r,_,_);
+        // .absolute(0,_,_,0);
+        opacity: 1;
+    }
+    .appslide-enter
+    {
+        // z-index: 1010;
+        // left: 100%;
+        opacity: 0;
+    }
+    .appslide-leave
+    {
+        // z-index: 990;
+        // left: -100%;
+        opacity: 0;
+    }
+}
+// 视图切换动效 end
+.app-bar {
+    .img-container {
+        display: inline-block;
+        margin-left: 20rem/@r;
+        padding: 10rem/@r;
+        .img {
+            width: 40rem/@r;
+            height: 40rem/@r;
+            background: url('../assets/img/icon/loading1.png');
+        }
+    }
+    .info {
+        display: inline-block;
+        .info-l {
+
+        }
+        .info-m {
+
+        }
+    }
+    download {
+        display: inline-block;
+    }
+}

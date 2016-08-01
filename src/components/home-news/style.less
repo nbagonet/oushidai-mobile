@@ -1,0 +1,229 @@
+@import '../../less/conf.less';
+
+.home-news
+{
+    position: relative;
+
+    background-color: @color-white;
+
+    .box-shadow(0 1rem/@r 4rem/@r 0 rgba(0,0,0,.15));
+    .margin(20rem/@r,_);
+    .padding(_,_,5rem/@r);
+    // 彩条 begin
+    &:after
+    {
+        z-index: 1;
+
+        overflow: hidden;
+
+        content: '';
+
+        .size(100%,5rem/@r);
+        .horizontal-gradient(rgb(89,220,196),rgb(0,191,242));
+        .absolute(_,0,0,0);
+    }
+    // 彩条 end
+    // 标题栏 begin
+    .title-bar
+    {
+        .display(flex);
+        .align-items(center);
+        .padding(30rem/@r,20rem/@r,10rem/@r);
+        > h2
+        {
+            font-size: 32rem/@r;
+
+            color: #5f5d5d;
+
+            .margin(_,auto,_,_);
+            .display(flex);
+            .align-items(center);
+            strong
+            {
+                .margin(_,_,_,10rem/@r);
+            }
+            i
+            {
+                font-size: 36rem/@r;
+            }
+            // 资讯图标 begin
+            .icon-readbook
+            {
+                color: @color-link-hover;
+            }
+            // 资讯图标 end
+            // 活动图标 begin
+            .icon-userrun
+            {
+                color: @color-green;
+            }
+            // 活动图标 end
+        }
+        // 控制按钮 begin
+        .btn-control
+        {
+            font-size: 30rem/@r;
+
+            .margin(_,5rem/@r,_,_);
+            .display(flex);
+            .align-items(center);
+            a
+            {
+                display: block;
+
+                color: #787676;
+
+                .padding(_,35rem/@r);
+                &:active
+                {
+                    color: @color-link-active;
+                }
+                &.disabled
+                {
+                    opacity: .8;
+                }
+            }
+        }
+        // 控制按钮 end
+        // 更多 begin
+        .more
+        {
+            font-size: 24rem/@r;
+            a
+            {
+                display: block;
+
+                color: #5f5d5d;
+
+                .padding(5rem/@r,_,5rem/@r,20rem/@r);
+                &:active
+                {
+                    color: @color-link-active;
+                }
+            }
+        }
+        // 更多 end
+    }
+    // 标题栏 end
+    // 列表 begin
+    .slider-home-news
+    {
+        .slider-home-news-slide
+        {
+            .padding(_,20rem/@r);
+        }
+        .home-news-list
+        {
+            > li
+            {
+                border-bottom: 1px solid #9d9d9c;
+
+                .display(flex);
+                .padding(20rem/@r,_);
+                &:last-child
+                {
+                    border-bottom: 0;
+                }
+
+                // 图片 begin
+                > .pic
+                {
+                    a
+                    {
+                        position: relative;
+
+                        display: block;
+                    }
+                    img
+                    {
+                        display: block;
+
+                        background-repeat: no-repeat;
+                        background-position: 50% 50%;
+                        background-size: cover;
+
+                        .size(240rem/@r,160rem/@r);
+                    }
+                }
+            }
+            // 图片 end
+            // 信息 begin
+            .info
+            {
+                .display(flex);
+                .flex(1);
+                .flex-direction(column);
+                .padding(_,20rem/@r);
+                .title
+                {
+                    font-size: 24rem/@r;
+                    line-height: 40/24;
+
+                    text-align: justify;
+                    word-wrap: break-word;
+                    word-break: break-all;
+
+                    .margin(_,_,auto);
+                    .ellipsis(2);
+                    a
+                    {
+                        color: #464646;
+                        &:active
+                        {
+                            color: @color-link-active;
+                        }
+                    }
+                }
+                .attr
+                {
+                    .display(flex);
+                    .align-items(flex-end);
+                    .margin(10rem/@r,_,_);
+                    // 作者 begin
+                    .author
+                    {
+                        font-size: 22rem/@r;
+                        line-height: 28/22;
+
+                        .margin(_,auto,_,_);
+                        .display(flex);
+                        .align-items(center);
+                        .avatar
+                        {
+                            .margin(_,10rem/@r,_,_);
+                        }
+                        a
+                        {
+                            color: #787676;
+                            &:active
+                            {
+                                color: @color-link-active;
+                            }
+                        }
+                        .name-time
+                        {
+                            color: #c7c6c5;
+                        }
+                    }
+                    // 作者 end
+                    // 点赞数 begin
+                    .like
+                    {
+                        font-size: 20rem/@r;
+
+                        color: #acaaaa;
+                        i
+                        {
+                            font-size: 22rem/@r;
+
+                            .margin(_,5rem/@r);
+                        }
+                    }
+                    // 点赞数 end
+                }
+            }
+            // 信息 end
+        }
+    }
+    // 列表 end
+}

@@ -1,0 +1,177 @@
+@import '../../less/conf.less';
+
+.user-info-block
+{
+    font-size: 20rem/@r;
+
+    position: relative;
+
+    height: @avatar-size-xl+60rem/@r;
+
+    color: @medium-grey-blue;
+    > .inner
+    {
+        min-width: 100%;
+
+        .margin(30rem/@r,_);
+        .display(flex);
+        .align-items(center);
+        .absolute(0,0,0,_);
+    }
+    // 头像
+    .author-avatar
+    {
+        .flex(none);
+        .padding(_,15rem/@r,_,_);
+        .size(@avatar-size-xl+15rem/@r,@avatar-size-xl);
+    }
+    // 信息
+    .author-info
+    {
+        .flex(1);
+        .margin(_,15rem/@r,_,_);
+        // 昵称和身份
+        .nick
+        {
+            .display(flex);
+            .padding(_,_,15rem/@r);
+            .name
+            {
+                font-size: 28rem/@r;
+
+                white-space: nowrap;
+
+                color: #6b797e;
+            }
+            .user-title
+            {
+                .margin(_,_,_,20rem/@r);
+            }
+        }
+        // 简介
+        .intro
+        {
+            white-space: nowrap;
+
+            .padding(_,_,10rem/@r,_);
+        }
+        // 统计
+        .count
+        {
+            > span
+            {
+                .margin(_,2em,_,_);
+                &:last-child
+                {
+                    .margin(_,0,_,_);
+                }
+            }
+        }
+    }
+    // 操作按钮
+    .act
+    {
+        width: 60rem/@r;
+        height: @avatar-size-xl;
+
+        border-left: 1px solid @lightest-grey-blue;
+
+        .display(flex);
+        .flex(none);
+        .transition(all @default-transition-time ease-in-out);
+        .btn
+        {
+            overflow: hidden;
+
+            width: 60rem/@r;
+            height: 100%;
+
+            opacity: 1;
+
+            .transition(all @default-transition-time ease-in-out);
+            .display(flex);
+            .justify-content(center);
+            .align-items(flex-end);
+            .flex-direction(column);
+            &:active
+            {
+                > span
+                {
+                    background-color: @color-link-active;
+                }
+            }
+            > span
+            {
+                display: block;
+                overflow: hidden;
+
+                background-color: @dark-grey-blue;
+
+                .size(5px);
+                // .size(8rem/@r);
+                .border-radius(50%);
+                .margin(4rem/@r,15rem/@r,4rem/@r,37rem/@r);
+            }
+        }
+        .link
+        {
+            font-size: 26rem/@r;
+
+            overflow: hidden;
+
+            width: 0;
+
+            opacity: 0;
+
+            .transition(all @default-transition-time ease-in-out);
+            .display(flex);
+            .align-items(center);
+            > a
+            {
+                line-height: @avatar-size-xl;
+
+                display: block;
+
+                height: @avatar-size-xl;
+
+                white-space: nowrap;
+
+                color: @color-link-hover;
+                border-right: 1px solid @color-link-hover;
+
+                .padding(_,1em);
+                &:active
+                {
+                    color: @color-link-active;
+                }
+                &:last-child
+                {
+                    border-right: 0;
+
+                    .padding(_,.5em,_,_);
+                }
+            }
+        }
+    }
+    // active状态
+    &.active
+    {
+        // 操作按钮
+        .act
+        {
+            width: 5em;
+            .btn
+            {
+                width: 0;
+
+                opacity: 0;
+            }
+            .link
+            {
+                width: 5em;
+
+                opacity: 1;
+            }
+        }
+    }
+}

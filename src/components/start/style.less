@@ -1,0 +1,195 @@
+@import '../../less/conf.less';
+
+.start
+{
+    z-index: 50000;
+
+    opacity: 1;
+    color: @color-white;
+    background: url('../../assets/img/common/cover-bg.jpg') no-repeat 50% 50% #333;
+    background-size: cover;
+
+    .user-select(none);
+    .fixed(0,0,0,0);
+    .transition(all @default-transition-time*2 ease-in-out);
+    a
+    {
+        color: @color-white;
+        &:active
+        {
+            color: @color-link-active;
+        }
+    }
+    .start-act
+    {
+        z-index: 800;
+
+        .absolute(0,0,0,0);
+        .size(100%);
+        .display(flex);
+        .flex-direction(column);
+        .align-items(center);
+        .justify-content(flex-end);
+    }
+    // 遮罩 begin
+    &:after
+    {
+        z-index: 100;
+
+        content: '';
+
+        background: url('../../assets/img/common/cover-mask.png') no-repeat 50% 50%;
+        background-size: cover;
+
+        .absolute(0,0,0,0);
+    }
+    // 遮罩 end
+    // logo begin
+    .logo
+    {
+        z-index: 200;
+
+        content: '';
+
+        background: url('../../assets/img/icon/logo-white.png') no-repeat 50% 50%;
+        background-size: contain;
+
+        .size(150px,50px);
+        .absolute(95px,_,_,50%);
+        .margin(_,_,_,-75px);
+    }
+    // logo end
+    // 按钮 begin
+    .btn-group
+    {
+        width: 520rem/@r;
+
+        .margin(auto,_,60rem/@r);
+        .display(flex);
+        .justify-content(center);
+        .btn
+        {
+            font-size: 32rem/@r;
+
+            text-indent: .75em;
+            letter-spacing: .75em;
+
+            .margin(_,10rem/@r);
+            .display(flex);
+            .flex(1);
+            .align-items(center);
+            .justify-content(center);
+            .padding(22rem/@r,_);
+            .border-radius(4rem/@r);
+            &:nth-child(1),
+            &:nth-child(2)
+            {
+                &:active
+                {
+                    color: @color-white;
+                    background-color: darken(@color-link-active,10%);
+                }
+            }
+            &:nth-child(1)
+            {
+                color: #474747;
+                background-color: @color-white;
+            }
+            &:nth-child(2)
+            {
+                background-color: @color-link-hover;
+            }
+        }
+    }
+    // 按钮 end
+    // 联合登录 begin
+    .union-login
+    {
+        width: 500rem/@r;
+
+        text-align: center;
+
+        .glow-text(fadeout(@color-black, 30%), 3px);
+        .margin(_,_,60rem/@r);
+        // 标题栏 begin
+        .title
+        {
+            font-size: 28rem/@r;
+
+            .display(flex);
+            .justify-content(center);
+            .align-items(center);
+            span
+            {
+                .flex(none);
+                .padding(_,20rem/@r);
+            }
+            &:before,
+            &:after
+            {
+                height: 1px;
+
+                content: '';
+
+                background-color: @color-white;
+
+                .flex(1);
+            }
+        }
+        // 标题栏 end
+        // 列表 begin
+        .union-list
+        {
+            .margin(25rem/@r,_,_);
+            .display(flex);
+            .align-items(center);
+            .justify-content(center);
+            > li
+            {
+                font-size: 45rem/@r;
+
+                .flex(1);
+                .display(flex);
+                .align-items(center);
+                .justify-content(center);
+                .icon-qq
+                {
+                    font-size: 40rem/@r;
+                }
+                a
+                {
+                    border: 2px solid @color-white;
+
+                    .display(flex);
+                    .align-items(center);
+                    .justify-content(center);
+                    .size(80rem/@r);
+                    .border-radius(50%);
+                    &:active
+                    {
+                        border-color: @color-link-active;
+                    }
+                }
+            }
+        }
+        // 列表 end
+    }
+    // 联合登录 end
+    // 非登录入口 begin
+    .enter
+    {
+        font-size: 28rem/@r;
+
+        width: 500rem/@r;
+
+        text-align: right;
+
+        .glow-text(fadeout(@color-black, 30%), 3px);
+        .margin(_,_,50rem/@r);
+        i
+        {
+            font-size: 24rem/@r;
+        }
+    }
+    // 非登录入口 end
+}

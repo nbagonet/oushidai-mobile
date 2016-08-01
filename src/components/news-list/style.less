@@ -1,0 +1,249 @@
+@import '../../less/conf.less';
+
+.news-list
+{
+    // 评论列表单元 begin
+    .comment-item
+    {
+        .title
+        {
+            height: auto;
+        }
+        .con-box
+        {
+            height: auto;
+        }
+        .comment-info
+        {
+            font-size: 24rem/@r;
+            line-height: 1.4;
+
+            word-wrap: break-word;
+            word-break: break-all;
+
+            color: #aaa;
+
+            .padding(10rem/@r,_,5rem/@r);
+        }
+    }
+    // 评论列表单元 end
+    // 新闻列表单元
+    .news-item
+    {
+        background-color: @color-white;
+
+        .box-shadow(0 1rem/@r 4rem/@r 0 rgba(0,0,0,.15));
+        .margin(20rem/@r);
+        .display(flex);
+        &.active
+        {
+            // 点击遮罩层
+            .click-cover
+            {
+                opacity: 1;
+            }
+        }
+    }
+    // 图片区
+    .pic-box
+    {
+        position: relative;
+
+        .flex(none);
+        .size(240rem/@r,192rem/@r);
+    }
+    // 标签
+    .tags
+    {
+        z-index: 100;
+
+        .absolute(10rem/@r,_,_,15rem/@r);
+        .opacity(80%);
+    }
+    // 图片
+    .pic
+    {
+        position: relative;
+
+        .size(100%);
+        > a
+        {
+            display: block;
+
+            .size(100%);
+        }
+        img
+        {
+            display: block;
+
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-size: cover;
+
+            .size(100%);
+        }
+    }
+    // 点击遮罩层
+    .click-cover
+    {
+        z-index: 100;
+
+        pointer-events: none;
+
+        opacity: 0;
+        color: @color-white;
+
+        .flex-direction(column);
+        .absolute(0,0,0,0);
+        .display(flex);
+        .justify-content(center);
+        .align-items(center);
+        .transition(all @default-transition-time ease-in-out);
+        .horizontal-gradient(rgba(90,220,196,.9),rgba(0,191,242,.9));
+        i,
+        span
+        {
+            text-align: center;
+        }
+        i
+        {
+            font-size: 50rem/@r;
+        }
+        span
+        {
+            font-size: 26rem/@r;
+        }
+    }
+    // 内容区
+    .con-box
+    {
+        overflow: hidden;
+
+        height: 192rem/@r;
+
+        .flex(1);
+        .padding(20rem/@r);
+    }
+    // 标题
+    .title
+    {
+        font-size: 28rem/@r;
+        line-height: 40rem/@r;
+
+        overflow: hidden;
+
+        height: 40rem/@r *2;
+
+        text-align: justify;
+        word-wrap: break-word;
+        word-break: break-all;
+
+        color: @color-darker-grey;
+        a
+        {
+            display: block;
+
+            color: @color-darker-grey;
+            &:active
+            {
+                color: @color-link-active;
+            }
+        }
+    }
+    // 信息
+    .attr
+    {
+        overflow: hidden;
+
+        height: 72rem/@r;
+
+        .display(flex);
+        .align-items(flex-end);
+    }
+    .author
+    {
+        font-size: 22rem/@r;
+        line-height: @avatar-size-md/2;
+
+        color: lighten(@darker-grey-blue,12%);
+
+        .display(flex);
+        .flex(1);
+        .align-items(center);
+        a
+        {
+            color: lighten(@darker-grey-blue,12%);
+            &:active
+            {
+                color: @color-link-active;
+            }
+        }
+        .avatar
+        {
+            .margin(_,10rem/@r,_,_);
+        }
+        .name
+        {
+            overflow: hidden;
+
+            height: @avatar-size-md/2;
+        }
+        .time
+        {
+            color: @medium-grey-blue;
+        }
+    }
+    .count
+    {
+        font-size: 22rem/@r;
+        line-height: @avatar-size-md/2;
+
+        color: darken(@light-grey-blue,8%);
+
+        .flex(none);
+        .display(flex);
+        .justify-content(flex-end);
+        .font-osd,
+        span
+        {
+            vertical-align: middle;
+
+            .inline-block();
+        }
+        a
+        {
+            color: darken(@light-grey-blue,8%);
+            &:active
+            {
+                color: @color-link-active;
+            }
+        }
+        .font-osd
+        {
+            font-size: 28rem/@r;
+            & + span
+            {
+                .margin(_,_,_,.3em);
+            }
+        }
+        span + .font-osd
+        {
+            .margin(_,_,_,.3em);
+        }
+    }
+}
+
+// 无数据提示
+.news-list-nodata
+{
+    font-size: 28rem/@r;
+
+    text-align: center;
+
+    color: @medium-grey-blue;
+    background-color: @color-white;
+
+    .padding(30rem/@r);
+    .box-shadow(0 1rem/@r 4rem/@r 0 rgba(0,0,0,.15));
+    .margin(20rem/@r);
+}

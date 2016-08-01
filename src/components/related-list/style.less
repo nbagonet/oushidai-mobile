@@ -1,0 +1,86 @@
+@import '../../less/conf.less';
+
+// 相关资讯 begin
+.related-news-list
+{
+    .padding(15rem/@r,20rem/@r,_);
+    // 新闻列表单元
+    .news-item
+    {
+        background-color: @color-white;
+
+        .box-shadow(0 1rem/@r 4rem/@r 0 rgba(0,0,0,.15));
+        .margin(15rem/@r,_);
+        .display(flex);
+    }
+    // 图片区
+    .pic-box
+    {
+        position: relative;
+
+        .flex(none);
+        .size(150rem/@r,120rem/@r);
+    }
+    // 图片
+    .pic
+    {
+        position: relative;
+
+        background-color: @medium-grey-blue;
+
+        .size(100%);
+        > a
+        {
+            display: block;
+
+            .size(100%);
+        }
+        img
+        {
+            display: block;
+
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-size: cover;
+
+            .size(100%);
+        }
+    }
+    // 内容区
+    .con-box
+    {
+        overflow: hidden;
+
+        height: 120rem/@r;
+
+        .flex(1);
+        .padding(20rem/@r);
+    }
+    // 标题
+    .title
+    {
+        font-size: 26rem/@r;
+        line-height: 40rem/@r;
+
+        overflow: hidden;
+
+        height: 40rem/@r *2;
+        // text-align: justify;
+
+        word-wrap: break-word;
+        word-break: break-all;
+
+        color: @color-darker-grey;
+
+        .ellipsis(2);
+        a
+        {
+            color: @color-darker-grey;
+            &:active
+            {
+                color: @color-link-active;
+            }
+        }
+    }
+}
+// 相关资讯 end

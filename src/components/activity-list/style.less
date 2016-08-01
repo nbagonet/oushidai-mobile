@@ -1,0 +1,166 @@
+@import '../../less/conf.less';
+
+.activity-list
+{
+    // 无数据提示 begin
+    .activity-list-nodata
+    {
+        font-size: 28rem/@r;
+
+        text-align: center;
+
+        color: @medium-grey-blue;
+        background-color: @color-white;
+
+        .padding(30rem/@r);
+        .box-shadow(0 1rem/@r 4rem/@r 0 rgba(0,0,0,.15));
+        .margin(20rem/@r);
+    }
+    // 无数据提示 end
+    // 活动列表单元 begin
+    .activity-item
+    {
+        position: relative;
+
+        background-color: @color-white;
+
+        .margin(15rem/@r,_,15rem/@r);
+        .box-shadow(0 1rem/@r 4rem/@r 0 rgba(0,0,0,.15));
+        // 图片区 begin
+        .pic-box
+        {
+            position: relative;
+
+            .size(100%,300rem/@r);
+            // 标签 begin
+            .tags
+            {
+                z-index: 100;
+
+                .absolute(10rem/@r,_,_,15rem/@r);
+                .opacity(80%);
+            }
+            // 标签 end
+            // 图片 begin
+            .pic
+            {
+                position: relative;
+
+                .size(100%);
+                > a
+                {
+                    display: block;
+
+                    background: url('../../assets/img/icon/share_icon.png') no-repeat 50% 50% #333;
+                    background-size: auto 100rem/@r;
+
+                    .size(100%);
+                }
+                img
+                {
+                    display: block;
+
+                    background-repeat: no-repeat;
+                    background-position: 50% 50%;
+                    background-size: cover;
+
+                    .size(100%);
+                }
+            }
+            // 图片 end
+        }
+        // 图片区 end
+
+        // 内容区 begin
+        .con-box
+        {
+            .padding(20rem/@r,40rem/@r);
+            // 标题 begin
+            .title
+            {
+                font-size: 30rem/@r;
+                line-height: 40/30;
+                a
+                {
+                    color: #444;
+                    &:active
+                    {
+                        color: @color-link-active;
+                    }
+                }
+            }
+            // 标题 end
+            // 信息 begin
+            .attr
+            {
+                .margin(20rem/@r,_,_);
+                .display(flex);
+                .align-items(center);
+                .author
+                {
+                    .margin(_,auto,_,_);
+                    .display(flex);
+                    .align-items(center);
+                    .avatar
+                    {
+                        .margin(_,10rem/@r,_,_);
+                    }
+                    .name
+                    {
+                        font-size: 20rem/@r;
+                        line-height: 34/20;
+
+                        // color: #aaa;
+                        color: lighten(@darker-grey-blue, 12%);
+                        a
+                        {
+                            // color: #aaa;
+                            color: lighten(@darker-grey-blue, 12%);
+                            &:active
+                            {
+                                color: @color-link-active;
+                            }
+                        }
+                    }
+                    .time
+                    {
+                        font-size: 16rem/@r;
+
+                        color: #ccc;
+                    }
+                }
+            }
+            // 信息 end
+        }
+        // 内容区 end
+    }
+    // 活动列表单元 end
+}
+.count {
+  color: darken(@light-grey-blue, 8%);
+  .flex(1);
+  .display(flex);
+  .justify-content(flex-end);
+  a {
+    color: darken(@light-grey-blue, 8%);
+    // color: darken(#aaa, 10%);
+    &:active {
+      color: @color-link-active;
+      // color: #aaa;
+    }
+  }
+  .font-osd,
+  span {
+    vertical-align: middle;
+    .inline-block();
+  }
+  .font-osd {
+    font-size: 28rem/@r;
+    & + span {
+      .margin(_, _, _, .3em);
+    }
+  }
+  span + .font-osd {
+    .margin(_, _, _, .3em);
+  }
+}

@@ -1,0 +1,359 @@
+@import '../../less/conf.less';
+.none {
+    display: none;
+}
+.toolbar
+{
+    z-index: 1890;
+
+    opacity: 0;
+
+    .fixed(_,0,100rem/@r,0);
+    .translateY(100%);
+    .display(flex);
+    .align-items(flex-end);
+    .justify-content(center);
+    .transition(all @default-transition-time ease-in-out);
+    // 显示状态 begin
+    &.show
+    {
+        opacity: 1;
+
+        .translateY(0);
+    }
+    // 显示状态 end
+    // 禁止选中 begin
+    *
+    {
+        user-select: none;
+    }
+    // 禁止选中 end
+    // 遮罩层 begin
+    .mask
+    {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 1900;
+
+        height: 100vh;
+
+        content: '';
+        pointer-events: none;
+
+        opacity: 0;
+        background-color: rgba(0,0,0,0);
+
+        .absolute(_,0,0,0);
+        .transition(all @default-transition-time ease-in-out);
+    }
+    // 遮罩层 end
+    // 激活时 begin
+    &.active
+    {
+        top: 0;
+        .mask
+        {
+            pointer-events: auto;
+
+            opacity: 1;
+            background-color: rgba(0,0,0,.4);
+        }
+    }
+    // 激活时 end
+    // 按钮样式 begin
+    > div
+    {
+        z-index: 1890;
+
+        width: 25%;
+
+        .display(flex);
+        .justify-content(center);
+        .padding(_,_,25rem/@r);
+        &.active
+        {
+            z-index: 1910;
+        }
+        > a
+        {
+            font-size: 40rem/@r;
+
+            overflow: hidden;
+
+            color: @color-white;
+            background-color: fadeout(#3c484d, 10%);
+
+            .display(flex);
+            .size(90rem/@r);
+            .border-radius(50%);
+            .align-items(center);
+            .justify-content(center);
+            .box-shadow(0 0 3rem/@r rgba(0,0,0,.3));
+            &.active
+            {
+                background-color: @standard-blue;
+
+                .box-shadow(0 0 36rem/@r rgba(255,255,255,.85));
+            }
+        }
+    }
+    // 按钮样式 end
+    // 分享按钮 begin
+    .btn-share
+    {
+        > a
+        {
+            i
+            {
+                .margin(.05em,-.2em,_,_);
+            }
+        }
+        // &.active
+        // {
+        //     .pop-share
+        //     {
+        //         pointer-events: auto;
+
+        //         opacity: 1;
+        //     }
+        // }
+    }
+    // 分享按钮 end
+    // 分享浮层 begin
+    .pop-share
+    {
+        z-index: 1920;
+
+        pointer-events: auto;
+
+        // opacity: 0;
+
+        .transition(all @default-transition-time ease-in-out);
+        .fixed(_,20rem/@r,200rem/@r,20rem/@r);
+        .pop-share-list,
+        .pop-share-cancel > a
+        {
+            background-color: @color-white;
+
+            .border-radius(8rem/@r);
+            .box-shadow(0 0 3rem/@r rgba(0,0,0,.3));
+        }
+        .pop-share-list
+        {
+            .padding(30rem/@r,_);
+            .margin(_,_,14rem/@r,_);
+            .title
+            {
+                font-size: 36rem/@r;
+
+                text-align: center;
+
+                color: @color-grey;
+
+                .padding(_,_,30rem/@r);
+            }
+            > ul
+            {
+                .clearfix();
+                .margin(_,20rem/@r);
+                > li
+                {
+                    float: left;
+
+                    width: 25%;
+                    > a
+                    {
+                        font-size: 55rem/@r;
+
+                        overflow: hidden;
+
+                        color: @color-white;
+                        background-color: #9fadb3;
+
+                        .margin(_,auto);
+                        .display(flex);
+                        .justify-content(center);
+                        .align-items(center);
+                        .size(98rem/@r);
+                        .border-radius(50%);
+                        &:active
+                        {
+                            background-color: @standard-blue;
+                        }
+                    }
+                    em
+                    {
+                        font-size: 22rem/@r;
+                        font-style: normal;
+
+                        display: block;
+
+                        text-align: center;
+
+                        color: @color-black;
+
+                        .margin(18rem/@r,_,25rem/@r);
+                    }
+                }
+            }
+        }
+    }
+    .pop-share-cancel,
+    .pop-more-cancel,
+    .pop-more-list
+    {
+        a
+        {
+            font-size: 36rem/@r;
+            line-height: 90rem/@r;
+
+            display: block;
+
+            text-align: center;
+
+            color: @standard-blue;
+
+            .size(100%,90rem/@r);
+            .transition(all @default-transition-time ease-in-out);
+            &:active
+            {
+                color: @color-red;
+
+                .box-shadow(0 0 36rem/@r rgba(255,255,255,1));
+            }
+        }
+    }
+    // 分享浮层 end
+    // 微信分享提示浮层 begin
+    .tips-share-weixin
+    {
+        z-index: 3000;
+
+        pointer-events: none;
+
+        opacity: 0;
+        background: rgba(0,0,0,.85) url('../../assets/img/common/share.png') no-repeat 50% 20%;
+        background-size: 80% auto;
+
+        .fixed(0,0,-60px,0);
+        .transition(all @default-transition-time ease-in-out);
+    }
+    .pop-share.active
+    {
+        .tips-share-weixin
+        {
+            pointer-events: auto;
+
+            opacity: 1;
+        }
+    }
+    // 微信分享提示浮层 end
+    // 更多操作选项浮层 begin
+    .pop-more
+    {
+        z-index: 1920;
+
+        .fixed(_,20rem/@r,200rem/@r,20rem/@r);
+        .pop-more-cancel,
+        .pop-more-list
+        {
+            a
+            {
+                background-color: @color-white;
+
+                .border-radius(8rem/@r);
+            }
+        }
+        .pop-more-list
+        {
+            .margin(_,_,14rem/@r,_);
+            li
+            {
+                .margin(1px,_,_);
+                &:first-child
+                {
+                    a
+                    {
+                        .border-radius(8rem/@r 8rem/@r 0 0);
+                    }
+                }
+                &:last-child
+                {
+                    a
+                    {
+                        .border-radius(0 0 8rem/@r 8rem/@r);
+                    }
+                }
+            }
+            a
+            {
+                display: block;
+
+                background-color: @color-white;
+
+                .border-radius(0);
+            }
+        }
+    }
+    // 更多操作选项浮层 end
+    .pop-copy {
+        z-index: 1920;
+        pointer-events: auto;
+        // opacity: 0;
+        .transition(all @default-transition-time ease-in-out);
+        .fixed(_,20rem/@r,200rem/@r,20rem/@r);
+        .pop-copy-tips,
+        .pop-share-cancel > a
+        {
+            background-color: @color-white;
+
+            .border-radius(8rem/@r);
+            .box-shadow(0 0 3rem/@r rgba(0,0,0,.3));
+        }
+        .pop-copy-tips
+        {
+            .padding(30rem/@r,_);
+            .margin(_,_,14rem/@r,_);
+            .title
+            {
+                font-size: 36rem/@r;
+
+                text-align: center;
+
+                color: @color-grey;
+
+                .padding(_,_,30rem/@r);
+                i.font-osd {
+                    font-size: 46px;
+                    color: @color-light-grey;
+                }
+                .info {
+                    font-size: 18px;
+                    color: #000;
+                    font-weight: normal;
+                    margin-top: 18rem/@r;
+                }
+            }
+            .link {
+                color: @color-grey;
+                // text-align: center;
+                font-size: 18px;
+                margin-left: auto;
+                margin-right: auto;
+                // white-space: normal;
+                word-wrap: break-word;
+                box-sizing: border-box;
+                width: 550rem/@r;
+                height: auto;
+                padding: 20rem/@r 20rem/@r;
+                background-color: RGBA(238, 238, 238, 1.00);
+                p {
+                    user-select: auto;
+                }
+            }
+        }
+    }
+}

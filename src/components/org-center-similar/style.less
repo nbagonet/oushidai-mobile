@@ -1,0 +1,137 @@
+@import '../../less/conf.less';
+
+.org-center-similar
+{
+    font-size: 24rem/@r;
+
+    position: relative;
+
+    color: @darker-grey-blue;
+    background-color: @color-white;
+
+    .bottom-bar-news();
+    .margin(_,_,25rem/@r);
+    .padding(30rem/@r,30rem/@r,10rem/@r);
+    .box-shadow(0 3rem/@r 3rem/@r rgba(0,0,0,.15));
+    // 标题栏
+    .title-bar
+    {
+        .margin(_,_,10rem/@r,_);
+        .display(flex);
+        .align-items(center);
+        i,
+        strong
+        {
+            font-weight: normal;
+        }
+        i
+        {
+            font-size: 36rem/@r;
+
+            .margin(_,10rem/@r,_,_);
+        }
+        strong
+        {
+            font-size: 32rem/@r;
+        }
+    }
+    // 列表
+    .list
+    {
+        word-wrap: break-word;
+        word-break: break-all;
+
+        .padding(10rem/@r,_,_);
+        li
+        {
+            position: relative;
+
+            width: 100%;
+
+            border-bottom: 1px solid @lightest-grey-blue;
+
+            .display(flex);
+            .align-items(flex-start);
+            .padding(25rem/@r,_);
+            &:last-child
+            {
+                border-bottom: 0;
+            }
+        }
+    }
+    // 用户头像
+    .user-pic
+    {
+        .flex(none);
+        .margin(_,25rem/@r,_,_);
+    }
+    // 信息
+    .user-info
+    {
+        .flex(1);
+        span,
+        i
+        {
+            vertical-align: middle;
+
+            .inline-block();
+        }
+        span + i,
+        i + span
+        {
+            .margin(_,_,_,.5em);
+        }
+        em
+        {
+            font-style: normal;
+        }
+        span > em
+        {
+            .margin(_,.5em,_,_);
+        }
+    }
+    .name,
+    .tags,
+    .others
+    {
+        font-size: 20rem/@r;
+        line-height: 36/20;
+
+        color: #aaa;
+    }
+    .name
+    {
+        font-size: 24rem/@r;
+
+        color: @color-darker-grey;
+        i
+        {
+            font-size: 20rem/@r;
+
+            .margin(_,_,_,5rem/@r);
+        }
+        a
+        {
+            color: @color-darker-grey;
+            &:active
+            {
+                color: @color-link-active;
+            }
+        }
+    }
+    .others
+    {
+        .clearfix();
+        .local,
+        .article
+        {
+            float: left;
+
+            .margin(_,1em,_,_);
+        }
+        .fans
+        {
+            float: right;
+        }
+    }
+}

@@ -1,0 +1,53 @@
+// ==========
+// Tag样式Mixin
+// ==========
+
+.tag-variant(@bg,@border,@color, @hover-bg,@hover-border,@hover-color, @active-bg,@active-border,@active-color)
+{
+    border-color: @border;
+    background-color: @bg;
+    // 文字容器
+    > span
+    {
+        color: @color;
+    }
+    // 尖角
+    &:before
+    {
+        border-color: @border;
+        background-color: @bg;
+    }
+    // 遮罩（用于遮盖尖角左侧的2个边）
+    &:after
+    {
+        background-color: @bg;
+    }
+    // 触发
+    &:hover
+    {
+        > span
+        {
+            color: @hover-color;
+        }
+        &,
+        &:before,
+        &:after
+        {
+            border-color: @hover-border;
+            background-color: @hover-bg;
+        }
+    }
+    &:active{
+        > span
+        {
+            color: @active-color;
+        }
+        &,
+        &:before,
+        &:after
+        {
+            border-color: @active-border;
+            background-color: @active-bg;
+        }
+    }
+}

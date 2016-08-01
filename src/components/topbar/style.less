@@ -1,0 +1,146 @@
+@import '../../less/conf.less';
+
+.topbar
+{
+    font-size: @font-size-default;
+
+    position: relative;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+
+    user-select: none;
+
+    color: @color-white;
+
+    .padding(_,_,10rem/@r,_);
+    .rgba-background(rgba(0,0,0,.85));
+    .display(flex);
+    .align-items(center);
+    .size(100%,70rem/@r);
+    .transition(all 200ms ease-in);
+    &.relatived {
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+    &.fixed
+    {
+        .fixed(0,0,_,0);
+    }
+    &:after
+    {
+        overflow: hidden;
+
+        height: 10rem/@r;
+
+        content: '';
+
+        .absolute(_,0,0,0);
+        .linear-gradient(to right, rgb(0,187,180), @standard-blue 40%, @highlight-blue 60%, rgb(255,170,245) 100%);
+    }
+    // 链接 begin
+    a
+    {
+        &,
+        &:hover,
+        &:focus
+        {
+            color: @color-white;
+        }
+        &:active
+        {
+            color: @color-link-active;
+        }
+    }
+    // 链接 end
+    // logo begin
+    .logo
+    {
+        .margin(_,10rem/@r,_,30rem/@r);
+        a,
+        img
+        {
+            display: block;
+        }
+        a
+        {
+            &:active
+            {
+                opacity: .8;
+            }
+        }
+        img
+        {
+            height: 36rem/@r;
+        }
+    }
+    // logo end
+    // 面包屑 begin
+    .breadcrumbs
+    {
+        .display(flex);
+        .margin(4rem/@r,auto,_,_);
+        li
+        {
+            .display(flex);
+            .align-items(center);
+            .font-osd
+            {
+                .margin(_,5rem/@r);
+            }
+        }
+    }
+    // 面包屑 end
+    // 菜单按钮 begin
+    .btn-menu
+    {
+        z-index: 100;
+
+        width: 62rem/@r;
+        height: 60rem/@r;
+
+        .absolute(0,0,_,_);
+        a
+        {
+            height: 100%;
+
+            .padding(_,30rem/@r,_,_);
+            .display(flex);
+            .align-items(center);
+            .flex-direction(column);
+            .justify-content(center);
+            &:active
+            {
+                span
+                {
+                    background-color: @color-link-active;
+                }
+            }
+        }
+        span
+        {
+            display: block;
+
+            background-color: @color-white;
+
+            .transition(all 200ms ease-in-out);
+            .size(100%,2px);
+            .border-radius(1px);
+            .margin(_,_,4px);
+            &:last-child
+            {
+                .margin(_,_,0,_);
+            }
+        }
+        &.active
+        {
+            span
+            {
+                background-color: @color-link-active;
+            }
+        }
+    }
+    // 菜单按钮 end
+}

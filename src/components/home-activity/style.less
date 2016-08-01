@@ -1,0 +1,345 @@
+@import '../../less/conf.less';
+
+.home-activity
+{
+    position: relative;
+
+    background-color: @color-white;
+
+    .box-shadow(0 1rem/@r 4rem/@r 0 rgba(0,0,0,.15));
+    .margin(20rem/@r,_);
+    .padding(_,_,5rem/@r);
+    // 彩条 begin
+    &:after
+    {
+        z-index: 1;
+
+        overflow: hidden;
+
+        content: '';
+
+        .size(100%,5rem/@r);
+        .horizontal-gradient(rgb(194,228,47),rgb(116,214,37));
+        .absolute(_,0,0,0);
+    }
+    // 彩条 end
+    // 标题栏 begin
+    .title-bar
+    {
+        .display(flex);
+        .align-items(center);
+        .padding(30rem/@r,20rem/@r,10rem/@r);
+        > h2
+        {
+            font-size: 32rem/@r;
+
+            color: #5f5d5d;
+
+            .margin(_,auto,_,_);
+            .display(flex);
+            .align-items(center);
+            strong
+            {
+                .margin(_,_,_,10rem/@r);
+            }
+            i
+            {
+                font-size: 36rem/@r;
+            }
+            // 资讯图标 begin
+            .icon-readbook
+            {
+                color: @color-link-hover;
+            }
+            // 资讯图标 end
+            // 活动图标 begin
+            .icon-userrun
+            {
+                color: @color-green;
+            }
+            // 活动图标 end
+        }
+        // 控制按钮 begin
+        .btn-control
+        {
+            font-size: 30rem/@r;
+
+            .margin(_,5rem/@r,_,_);
+            .display(flex);
+            .align-items(center);
+            a
+            {
+                display: block;
+
+                color: #787676;
+
+                .padding(_,35rem/@r);
+                &:active
+                {
+                    color: @color-link-active;
+                }
+                &.disabled
+                {
+                    opacity: .8;
+                }
+            }
+        }
+        // 控制按钮 end
+        // 更多 begin
+        .more
+        {
+            font-size: 24rem/@r;
+            a
+            {
+                display: block;
+
+                color: #5f5d5d;
+
+                .padding(5rem/@r,_,5rem/@r,20rem/@r);
+                &:active
+                {
+                    color: @color-link-active;
+                }
+            }
+        }
+        // 更多 end
+    }
+    // 标题栏 end
+    // 列表 begin
+    .slider-home-activity
+    {
+        .slider-home-activity-slide
+        {
+            .padding(_,20rem/@r);
+        }
+        .home-activity-list
+        {
+            > li
+            {
+                border-bottom: 1px solid #9d9d9c;
+
+                .display(flex);
+                .padding(20rem/@r,_);
+                &:last-child
+                {
+                    border-bottom: 0;
+                }
+
+                // 图片 begin
+                > .pic
+                {
+                    position: relative;
+                    a
+                    {
+                        position: relative;
+
+                        display: block;
+                    }
+                    img
+                    {
+                        display: block;
+
+                        background-repeat: no-repeat;
+                        background-position: 50% 50%;
+                        background-size: cover;
+
+                        .size(240rem/@r,160rem/@r);
+                    }
+                    // 活动信息 begin
+                    .home-activity-info
+                    {
+                        z-index: 100;
+
+                        text-align: center;
+
+                        .absolute(15rem/@r,15rem/@r,_,_);
+                        .home-activity-info-time
+                        {
+                            color: @color-white;
+
+                            .padding(_,_,5rem/@r);
+                            .glow-text(#000, 2px);
+                            strong,
+                            small
+                            {
+                                display: block;
+                            }
+                            strong
+                            {
+                                font-size: 24rem/@r;
+                                font-weight: 300;
+                            }
+                            small
+                            {
+                                font-size: 40rem/@r;
+                            }
+                        }
+                        .home-activity-info-city
+                        {
+                            // height: 24rem/@r;
+                            // line-height: 24rem/@r;
+                            // transform: scale(0.5);
+                            // transform-origin: 100% 100%;
+                            font-size: 18rem/@r;
+                            vertical-align: middle;
+                            color: #464646;
+                            background-color: rgba(255,255,255,.9);
+                            .display(flex);
+                            .align-items(center);
+                            .justify-content(center);
+                            .border-radius(3px);
+                            .padding(2rem/@r,5rem/@r);
+
+                            display: table;
+                            // height: 48rem/@r;
+                            // line-height: 48rem/@r;
+                            // transform: scale(.5);
+                            // transform-origin: 100% 100%;
+                            span {
+                                display: table-cell;
+                                vertical-align: middle;
+                            }
+                        }
+                    }
+                    // 活动信息 end
+                }
+            }
+            // 图片 end
+            // 信息 begin
+            .info
+            {
+                .display(flex);
+                .flex(1);
+                .flex-direction(column);
+                .padding(_,20rem/@r);
+                .title
+                {
+                    .display(flex);
+                    .margin(_,_,auto);
+                    .title-time
+                    {
+                        line-height: 1.2;
+
+                        color: #787676;
+                        border-right: 1px solid #f1f0ef;
+
+                        .margin(_,20rem/@r,_,_);
+                        .display(flex);
+                        .align-items(center);
+                        .justify-content(center);
+                        .flex-direction(column);
+                        .padding(_,20rem/@r,_,_);
+                        strong
+                        {
+                            font-size: 24rem/@r;
+                            font-weight: 300;
+                        }
+                        small
+                        {
+                            font-size: 40rem/@r;
+                        }
+                        strong,
+                        small
+                        {
+                            display: block;
+
+                            text-align: center;
+                            white-space: nowrap;
+                        }
+                    }
+                    a
+                    {
+                        font-size: 24rem/@r;
+                        line-height: 40/24;
+
+                        text-align: justify;
+                        word-wrap: break-word;
+                        word-break: break-all;
+
+                        color: #464646;
+
+                        .ellipsis(2);
+                        &:active
+                        {
+                            color: @color-link-active;
+                        }
+                    }
+                }
+                .attr
+                {
+                    .display(flex);
+                    .align-items(flex-end);
+                    .margin(10rem/@r,_,_);
+                    // 作者 begin
+                    .author
+                    {
+                        font-size: 20rem/@r;
+                        line-height: 28/22;
+
+                        .margin(_,auto,_,_);
+                        .display(flex);
+                        .align-items(center);
+                        .avatar
+                        {
+                            .margin(_,10rem/@r,_,_);
+                        }
+                        a
+                        {
+                            color: #787676;
+                            &:active
+                            {
+                                color: @color-link-active;
+                            }
+                        }
+                        .name-time
+                        {
+                            color: #c7c6c5;
+                        }
+                        .home-activity-name-time
+                        {
+                            .display(flex);
+                            .align-items(center);
+                        }
+                        .home-activity-info-city
+                        {
+                            font-size: 20rem/@r;
+
+                            color: #9e9d9c;
+
+                            .margin(_,15rem/@r,_,_);
+                            .display(flex);
+                            .align-items(center);
+                            em
+                            {
+                                font-style: normal;
+                            }
+                            i
+                            {
+                                font-size: 24rem/@r;
+
+                                .margin(_,5rem/@r,_,_);
+                            }
+                        }
+                    }
+                    // 作者 end
+                    // 点赞数 begin
+                    .like
+                    {
+                        font-size: 20rem/@r;
+
+                        color: #acaaaa;
+                        i
+                        {
+                            font-size: 22rem/@r;
+
+                            .margin(_,5rem/@r);
+                        }
+                    }
+                    // 点赞数 end
+                }
+            }
+            // 信息 end
+        }
+    }
+    // 列表 end
+}

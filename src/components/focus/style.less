@@ -1,0 +1,198 @@
+@import '../../less/conf.less';
+@import '../../less/activity-info.less';
+
+.slider-focus
+{
+    position: relative;
+
+    user-select: none;
+
+    background-color: @color-white;
+
+    .box-shadow(0 1rem/@r 4rem/@r 0 rgba(0,0,0,.15));
+    // 图片 begin
+    .image
+    {
+        position: relative;
+
+        background-color: @color-dark-grey;
+
+        .size(100%,320rem/@r);
+        img
+        {
+            display: block;
+
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-size: cover;
+
+            .size(100%);
+        }
+    }
+    // 图片 end
+    // 标签 begin
+    .tags
+    {
+        z-index: 200;
+
+        .absolute(20rem/@r,_,_,20rem/@r);
+    }
+    // 标签 end
+    // 内容区 begin
+    .con
+    {
+        .padding(20rem/@r,30rem/@r);
+        .display(flex);
+        .flex-wrap(nowrap);
+        .align-items(flex-start);
+        .justify-content(flex-start);
+    }
+    // 内容区 end
+    // 发布者头像 begin
+    .author-avatar
+    {
+        .flex(none);
+        .padding(_,20rem/@r,_,_);
+    }
+    // 发布者头像 end
+    // 标题等 begin
+    .content-box
+    {
+        .flex(1);
+        // 标题 begin
+        .title
+        {
+            font-size: 32rem/@r;
+            line-height: 44rem/@r;
+
+            overflow: hidden;
+
+            height: 44rem/@r *2;
+
+            text-align: justify;
+            word-wrap: break-word;
+            word-break: break-all;
+
+            color: @color-darker-grey;
+            a
+            {
+                color: @color-darker-grey;
+                &:active
+                {
+                    color: @color-link-active;
+                }
+            }
+        }
+        // 标题 end
+        // 附加信息 begin
+        .attr
+        {
+            font-size: 22rem/@r;
+
+            .padding(10rem/@r,_,_);
+            .display(flex);
+            .align-items(center);
+            // 发布者昵称
+            .name
+            {
+                white-space: nowrap;
+
+                color: lighten(@darker-grey-blue,12%);
+
+                .flex(none);
+                .margin(_,.3em,_,_);
+                a
+                {
+                    color: lighten(@darker-grey-blue,12%);
+                    &:active
+                    {
+                        color: @color-link-active;
+                    }
+                }
+            }
+            // 发布时间
+            .time
+            {
+                white-space: nowrap;
+
+                color: darken(@light-grey-blue,8%);
+
+                .flex(none);
+                &:before
+                {
+                    content: '·';
+
+                    .margin(_,.3em,_,_);
+                }
+            }
+            // 各种统计
+            .count
+            {
+                color: darken(@light-grey-blue,8%);
+
+                .flex(1);
+                .display(flex);
+                .justify-content(flex-end);
+                a
+                {
+                    color: darken(@light-grey-blue,8%);
+                    &:active
+                    {
+                        color: @color-link-active;
+                    }
+                }
+                .font-osd,
+                span
+                {
+                    vertical-align: middle;
+
+                    .inline-block();
+                }
+                .font-osd
+                {
+                    font-size: 28rem/@r;
+                    & + span
+                    {
+                        .margin(_,_,_,.3em);
+                    }
+                }
+                span + .font-osd
+                {
+                    .margin(_,_,_,.3em);
+                }
+            }
+        }
+        // 附加信息 end
+    }
+    // 标题等 end
+    // 分页器 begin
+    .slider-focus-pagination
+    {
+        // .display(flex);
+        // .justify-content(center);
+        font-size: 0;
+
+        z-index: 150;
+
+        height: 20rem/@r;
+
+        text-align: center;
+
+        .absolute(274rem/@r,0,_,0);
+    }
+    .slider-focus-bullet
+    {
+        background-color: fadeout(@color-white,20%);
+
+        .size(20rem/@r);
+        .border-radius(50%);
+        .margin(_,10rem/@r);
+        .inline-block();
+        .transition(all @default-transition-time ease);
+    }
+    .slider-focus-bullet-active
+    {
+        background-color: darken(@standard-blue,4.75%);
+    }
+    // 分页器 end
+}
