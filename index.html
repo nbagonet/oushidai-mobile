@@ -19,7 +19,6 @@
   <meta http-equiv="Cache-Control" content="no-siteapp">
   <script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
   <script>
-  {$wechat_config = open_platform_helper::get_wx_sdk_config()}
   var $info = {};
   $info.shareConf = {
     weixin: {
@@ -43,7 +42,6 @@
     }
   }
   </script>
-  {literal}
   <style>
   .start-cover{
     z-index: 50000;
@@ -116,12 +114,9 @@
     }
   }
   </style>
-  {/literal}
 </head>
-
   <body>
     <div class="start-cover"><div class="bg"></div></div>
     <div id="apps"></div>
   </body>
-
 </html>
