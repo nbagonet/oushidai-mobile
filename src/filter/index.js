@@ -147,9 +147,10 @@ export function formatDateTime (time) {
  * @param  {String} html 正文html代码
  * @return {String}      优化后的正文html代码
  */
-import $ from 'jquery'
+// import $ from 'jquery'
 export function optimizeContent (html) {
-  var new_html = ''
+  const $ = window.$
+  let newHtml = ''
 
   if (html) {
     // 清除空的section
@@ -161,13 +162,13 @@ export function optimizeContent (html) {
       }
     })
 
-    new_html = $('#content_tmp').html()
+    newHtml = $('#content_tmp').html()
     $('#content_tmp').remove()
   } else {
-    new_html = html
+    newHtml = html
   }
 
-  return new_html
+  return newHtml
 }
 
 /**

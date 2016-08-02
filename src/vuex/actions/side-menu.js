@@ -45,7 +45,7 @@ export const downloadApp = ({
   } else {
     type = 'others'
   }
-  console.log('手机类型', type)
+  // console.log('手机类型', type)
   component.$http.post(_port, {
     'type': type
   }).then(function (res) {

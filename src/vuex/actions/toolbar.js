@@ -1,5 +1,8 @@
-import $ from 'jquery'
+// import $ from 'jquery'
 // import Clipboard from 'Clipboard'
+
+const $ = window.$
+
 /**
  * 弹出指定的浮层
  * @param  {[type]} {                    dispatch [description]

@@ -3,12 +3,12 @@ import {
   APIError
 } from '../../api'
 import {
-  removeHTMLTag
-} from '../../vuex/action'
-import {
+  removeHTMLTag,
   setWeixinShare
 } from '../../vuex/action'
-import $ from 'jquery'
+// import $ from 'jquery'
+
+const $ = window.$
 
 /**
  * 获取正文内容相关数据

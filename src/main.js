@@ -39,16 +39,17 @@ import Resource from 'vue-resource'
 import { initMock } from './api/mock'
 // import FastClick from 'fastclick'
 // import { checkRouterDirection } from './vuex/action'
+import $ from '../node_modules/jquery/dist/jquery.slim.js'
+
+// 全局$
+window.$ = $
 
 // 开启Vue debug
-Vue.config.debug = false
+Vue.config.debug = true
 if (!Vue.config.debug) {
   console.log = function () {}
 }
 Vue.config.devtools = true
-
-// 初始化Mock
-initMock()
 
 // 使用插件
 Vue.use(Vuex)
@@ -65,6 +66,9 @@ Vue.http.options.emulateJSON = true
 //     FastClick.attach(document.body)
 //   }, false)
 // }
+
+// 初始化Mock
+initMock()
 
 // 入口组件
 import entrance from './entrance'
@@ -108,6 +112,7 @@ for (var key in _filters) {
   Vue.filter(key, _filters[key])
 }
 
+/*eslint-disable */
 // 配置全局表单验证规则
 // email
 Vue.validator('email', {
@@ -187,8 +192,12 @@ Vue.validator('nickname', {
     return isLegal
   }
 })
+/* eslint-enable */
 
 // 隐藏cover
-window.onload = function () {
-  document.querySelector('.start-cover').className += ' hidden'
-}
+// window.onload = function () {
+//   document.querySelector('.start-cover').className += ' hidden'
+// }
+$(function () {
+  $('.start-cover').remove()
+})

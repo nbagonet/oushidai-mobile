@@ -2,7 +2,7 @@ const setEventListConfig = ({
   dispatch,
   state
 }, component) => {
-  const _focus_port = state.apis['activity-focus']
+  const _focusPort = state.apis['activity-focus']
   const _port = state.apis['activity-list']
   let category = component.$route.query.category
   let tagid = component.$route.query.tagid
@@ -20,7 +20,7 @@ const setEventListConfig = ({
   if (category || tagid) {
     dispatch('SET_EVENT_HOME_EVENT_FOCUS_CONFIG', {
       show: false,
-      port: _focus_port,
+      port: _focusPort,
       showFilter: false,
       filterLink: 'activity-filter'
     })
@@ -32,7 +32,7 @@ const setEventListConfig = ({
   } else {
     dispatch('SET_EVENT_HOME_EVENT_FOCUS_CONFIG', {
       show: true,
-      port: _focus_port,
+      port: _focusPort,
       showFilter: true,
       filterLink: 'activity-filter'
     })

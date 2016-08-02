@@ -33,7 +33,7 @@ const mutations = {
    * @param {[type]} data  [description]
    */
   SET_HOME_ACTIVITY (state, data) {
-    console.log('设置活动列表数据')
+    // console.log('设置活动列表数据')
     if (state.list.length > 0) {
       for (let i = 0; i < data.length; i++) {
         state.list.push(data[i])

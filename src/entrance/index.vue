@@ -30,7 +30,7 @@
 
 <script>
 import store from '../vuex/store'
-import setApp from '../vuex/action'
+// import setApp from '../vuex/action'
 
 module.exports = {
   name: 'entrance',
@@ -44,7 +44,7 @@ module.exports = {
       bottombar: state => state.bottombar
     },
     actions: {
-      setApp
+      // setApp
     }
   },
   components: {
@@ -66,7 +66,7 @@ module.exports = {
     }
   },
   created: function () {
-    console.log('entrance', this.setApp)
+    // console.log('entrance', this.setApp)
   },
   ready: function () {
     // this.setApp(this)

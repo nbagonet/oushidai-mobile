@@ -1,4 +1,7 @@
-import $ from 'jquery'
+// import $ from 'jquery'
+
+const $ = window.$
+
 /**
  * 设置面包屑
  * @param  {[type]} {                    dispatch [description]
@@ -10,7 +13,7 @@ export const setBreadcrumbs = ({
   dispatch,
   state
 }, data) => {
-  console.log('配置面包屑')
+  // console.log('配置面包屑')
   dispatch('SET_BREADCRUMBS_INFO', data)
 }
 

@@ -5,10 +5,12 @@
  * @param  {function} failed   返回失败(error !== 1000)时的处理函数，此函数接收2个参数，参数1为errmsg，参数2为error
  */
 export function handleResponse (response, success, failed) {
-  var d = response.data
+  var d = JSON.parse(response.data)
   var e = d.error
   var m = d.errmsg
   var r = d.data
+
+  // console.log(JSON.parse(response.data))
 
   if (Number(e) === 1000) {
     if (typeof success === 'function') {

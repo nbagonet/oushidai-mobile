@@ -1,10 +1,12 @@
-import $ from 'jquery'
+// import $ from 'jquery'
 import {
   handleResponse
 } from '../../api'
 // import {
 //   toggleLockScroll
 // } from '../action.js'
+
+const $ = window.$
 
 export const bindClose = ({
   dispatch,
@@ -33,7 +35,7 @@ export const setAppLink = ({
   } else {
     type = 'others'
   }
-  console.log('手机类型', type)
+  // console.log('手机类型', type)
   component.$http.post(_port, {
     'type': type
   }).then(function (res) {

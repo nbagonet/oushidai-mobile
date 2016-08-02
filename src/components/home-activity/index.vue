@@ -88,7 +88,7 @@ module.exports = {
     this.init(this)
   },
   destroyed: function () {
-    console.log('销毁网站首页活动列表组件')
+    // console.log('销毁网站首页活动列表组件')
     // 重置组件状态
     this.reset(this)
   }

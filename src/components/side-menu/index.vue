@@ -126,7 +126,7 @@ module.exports = {
     }
   },
   created: function () {
-    console.log('sidemenu', this)
+    // console.log('sidemenu', this)
     this.downloadApp(this)
   },
   ready: function () {

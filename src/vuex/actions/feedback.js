@@ -1,8 +1,11 @@
-import $ from 'jquery'
+// import $ from 'jquery'
 import {
   handleResponse
 } from '../../api'
 import { getStringLength } from '../../vuex/action.js'
+
+const $ = window.$
+
 export const submitFeedback = ({
   dispatch,
   state

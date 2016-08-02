@@ -15,7 +15,7 @@ const setConfig = ({
   dispatch,
   state
 }, component) => {
-  console.log('配置网站首页资讯组件参数')
+  // console.log('配置网站首页资讯组件参数')
   // 接口地址
   state.homeNews.port = component.config.port
   // 请求参数
@@ -36,7 +36,7 @@ const getNewsData = ({
   const _port = state.homeNews.port
   const _params = state.homeNews.params
 
-  console.log('请求网站首页资讯列表组件数据', _port, _params)
+  // console.log('请求网站首页资讯列表组件数据', _port, _params)
 
   // loading状态
   dispatch('GLOBAL_LOADING', true)

@@ -2,7 +2,9 @@ import {
   handleResponse,
   APIError
 } from '../../api'
-import $ from 'jquery'
+// import $ from 'jquery'
+
+const $ = window.$
 
 /**
  * 配置

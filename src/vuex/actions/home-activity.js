@@ -15,7 +15,7 @@ const setConfig = ({
   dispatch,
   state
 }, component) => {
-  console.log('配置网站首页活动组件参数')
+  // console.log('配置网站首页活动组件参数')
   // 接口地址
   state.homeActivity.port = component.config.port
   // 请求参数
@@ -36,7 +36,7 @@ const getActivityData = ({
   const _port = state.homeActivity.port
   const _params = state.homeActivity.params
 
-  console.log('请求网站首页活动列表组件数据', _port, _params)
+  // console.log('请求网站首页活动列表组件数据', _port, _params)
 
   // loading状态
   dispatch('GLOBAL_LOADING', true)
@@ -51,7 +51,7 @@ const getActivityData = ({
         // dispatch('GLOBAL_LOADING', false)
         // 设置活动列表数据
         dispatch('SET_HOME_ACTIVITY', data.list)
-        console.log(data.list)
+        // console.log(data.list)
         // 初始化slider
         component.$nextTick(() => {
           initSlider({ dispatch, state }, '.slider-home-activity', ['.home-activity-arrLeft', '.home-activity-arrRight'])

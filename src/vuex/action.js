@@ -1,11 +1,14 @@
 import Store from 'store'
-import $ from 'jquery'
+// import $ from 'jquery'
 import {
   substr2
 } from '../filter'
 import {
   handleResponse
 } from '../api'
+
+const $ = window.$
+
 /**
  * 计算一个字符串的长度，其中全角字符计为2
  * @param  {string} str 字符串
@@ -283,7 +286,7 @@ export const setApp = ({
   } else {
     type = 'others'
   }
-  console.log('手机类型', type)
+  // console.log('手机类型', type)
   component.$http.post(_port, {
   // $.ajax({
   //   url: _port,

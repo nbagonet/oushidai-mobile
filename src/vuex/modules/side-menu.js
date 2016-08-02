@@ -84,7 +84,7 @@ const mutations = {
     state.show = status
   },
   SET_APP_LINK (state, link) {
-    console.log('设置app下载链接')
+    // console.log('设置app下载链接')
     state.bottomBar[3].link = link
   }
 }

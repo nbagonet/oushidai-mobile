@@ -1,127 +1,169 @@
 @import '../../less/conf.less';
 
-.bottombar {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-top: 20rem/@r;
-  margin-bottom: 90rem/@r;
-  .bottombar-item {
-    // margin-top: 20rem/@r;
-    margin-bottom: 20rem/@r;
-    display: block;
-    text-align: center;
-  }
-  .help-list {
-    // display: flex;
-    // display: block;
-    // margin-left: auto;
-    // margin-right: auto;
-    // text-align: center;
-    li {
-      display: inline;
-      margin-left: 10rem/@r;
-      &:before {
-        content: '|';
-        margin-right: 10rem/@r;
-      }
-      &:first-child {
-        &:before {
-          content: '';
-        }
-      }
-    }
-  }
-  .oushidai {
-    color: @color-grey;
-    // text-align: center;
-  }
-  .view-list {
-    li {
-      display: inline;
-      margin-left: 15rem/@r;
-      margin-right: 15rem/@r;
-      // margin-bottom: 15rem/@r;
-      &.actived {
-        a {
-          color: @color-grey;
-        }
-      }
-    }
-  }
-  .func-list {
-    // margin-top: 30rem/@r;
+.bottombar
+{
     display: flex;
+    flex-direction: column;
+
+    margin-top: 20rem/@r;
+    margin-bottom: 90rem/@r;
+
     justify-content: center;
-    align-items: center;
-    li {
-      font-size: 10px;
-      display: table;
-      background-color: #fff;
-      width: 50rem/@r;
-      height: 50rem/@r;
-      margin-left: 10rem/@r;
-      &.text-large {
-        font-size: 35rem/@r;
-      }
-      a {
-        color: @color-grey;
-        display: table-cell;
-        vertical-align: middle;
+    .bottombar-item
+    {
+        display: block;
+        // margin-top: 20rem/@r;
+
+        margin-bottom: 20rem/@r;
+
         text-align: center;
-      }
     }
-  }
-  .weixin-group-qr {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 2000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s ease-in-out;
-  }
-  .app-img {
-    position: fixed;
-    // margin-top: 40rem/@r;
-    z-index: 5000;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    // padding: 10rem/@r 20rem/@r;
-    a {
-      position: relative;
-      display: inline-block;
+    .help-list
+    {
+        // display: flex;
+        // display: block;
+        // margin-left: auto;
+        // margin-right: auto;
+        // text-align: center;
+        li
+        {
+            display: inline;
+
+            margin-left: 10rem/@r;
+            &:before
+            {
+                margin-right: 10rem/@r;
+
+                content: '|';
+            }
+            &:first-child
+            {
+                &:before
+                {
+                    content: '';
+                }
+            }
+        }
     }
-    img {
-      display: block;
-      // width: 100vw;
-      // height: 14vw;
-      width: 100%;
-      // height: 50px;
-      // background-color: url('../../assets/img/app-download.png');
+    .oushidai
+    {
+        color: @color-grey;
+        // text-align: center;
     }
-    // .ad-icon {
-    //   display: inline-block;
-    //   width: 30rem/@r;
-    //   height: 30rem/@r;
-    //   background-color: #000;
-    //   img {
-    //     width: 20rem/@r;
-    //     height: 20rem/@r;
-    //   }
-    // }
-    .close {
-      position: absolute;
-      background-color: transparent;
-      top: 3vw;
-      right: 4vw;
-      width: 8vw;
-      height: 8vw;
+    .view-list
+    {
+        li
+        {
+            display: inline;
+
+            margin-right: 15rem/@r;
+            margin-left: 15rem/@r;
+            // margin-bottom: 15rem/@r;
+            &.actived
+            {
+                a
+                {
+                    color: @color-grey;
+                }
+            }
+        }
     }
-  }
+    .func-list
+    {
+        // margin-top: 30rem/@r;
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+        li
+        {
+            font-size: 10px;
+
+            display: table;
+
+            width: 50rem/@r;
+            height: 50rem/@r;
+            margin-left: 10rem/@r;
+
+            background-color: #fff;
+            &.text-large
+            {
+                font-size: 35rem/@r;
+            }
+            a
+            {
+                display: table-cell;
+
+                text-align: center;
+                vertical-align: middle;
+
+                color: @color-grey;
+            }
+        }
+    }
+    .weixin-group-qr
+    {
+        position: fixed;
+        z-index: 2000;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        display: flex;
+
+        transition: all .2s ease-in-out;
+
+        background-color: rgba(0, 0, 0, .5);
+
+        align-items: center;
+        justify-content: center;
+    }
+    .app-img
+    {
+        position: fixed;
+        // margin-top: 40rem/@r;
+        z-index: 5000;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        // padding: 10rem/@r 20rem/@r;
+        a
+        {
+            position: relative;
+
+            // display: inline-block;
+        }
+        img
+        {
+            display: block;
+            // width: 100vw;
+            // height: 14vw;
+
+            width: 100%;
+            // height: 50px;
+            // background-color: url('../../assets/img/app-download.png');
+        }
+        // .ad-icon {
+        //   display: inline-block;
+        //   width: 30rem/@r;
+        //   height: 30rem/@r;
+        //   background-color: #000;
+        //   img {
+        //     width: 20rem/@r;
+        //     height: 20rem/@r;
+        //   }
+        // }
+        .close
+        {
+            position: absolute;
+            top: 3vw;
+            right: 4vw;
+
+            width: 8vw;
+            height: 8vw;
+
+            background-color: transparent;
+        }
+    }
 }

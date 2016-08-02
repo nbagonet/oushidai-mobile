@@ -3,9 +3,7 @@ import {
   APIError
 } from '../../api'
 import {
-  removeHTMLTag
-} from '../../vuex/action'
-import {
+  removeHTMLTag,
   setWeixinShare
 } from '../../vuex/action'
 
