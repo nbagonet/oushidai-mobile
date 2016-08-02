@@ -212,7 +212,7 @@
             {
                 color: #5f5d5d;
 
-                .transition(all @default-transition-time ease);
+                .transition(color @default-transition-time ease);
                 &:active
                 {
                     color: @color-link-active;
@@ -222,7 +222,7 @@
             > strong,
             > em
             {
-                .transition(all @default-transition-time ease);
+                .transition(transform @default-transition-time ease);
             }
             > span
             {
@@ -324,7 +324,7 @@
                 border-bottom: 1px solid #c7c6c5;
 
                 .flex(1);
-                .transition(all @default-transition-time ease);
+                .transition(color,border @default-transition-time ease);
                 &:after
                 {
                     z-index: 1;
@@ -336,7 +336,7 @@
                     content: '';
 
                     .absolute(_,0,-1px,0);
-                    .transition(all @default-transition-time ease);
+                    .transition(height,background-color @default-transition-time ease);
                 }
                 span
                 {

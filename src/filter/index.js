@@ -1,6 +1,8 @@
 // 加载moment.js
 import moment from 'moment'
 
+const $ = window.$
+
 /**
  * 计算一个字符串的长度，其中全角字符计为2
  * @param  {string} str 字符串
@@ -149,7 +151,6 @@ export function formatDateTime (time) {
  */
 // import $ from 'jquery'
 export function optimizeContent (html) {
-  const $ = window.$
   let newHtml = ''
 
   if (html) {
